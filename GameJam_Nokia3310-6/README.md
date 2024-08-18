@@ -1,4 +1,4 @@
-Game Jam: [Nokia 3310 Jam 6](https://itch.io/jam/nokiajam6)
+Game Jam: [Nokia 3310 Jam 6](https://itch.io/jam/nokiajam6)<br>
 Game: [Basilisk's Leap](https://kengikita.itch.io/basiliks-leap)
 
 Description:
