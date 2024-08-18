@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvag2r8g7g2up"]
+
+[ext_resource type="Script" path="res://Scripts/resource_ui_card.gd" id="1_trcbl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0e0ju"]
+font_size = 20
+
+[node name="Resource UI Card Template" type="Control"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 3
+anchor_right = 0.133188
+anchor_bottom = 0.062
+offset_right = -3.43201
+offset_bottom = -0.176003
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_trcbl")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+text = "Resource: -1"
+label_settings = SubResource("LabelSettings_0e0ju")
+vertical_alignment = 1

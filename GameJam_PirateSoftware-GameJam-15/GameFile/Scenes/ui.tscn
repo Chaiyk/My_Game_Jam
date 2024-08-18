@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjmylrpc8w08p"]
+
+[ext_resource type="Script" path="res://Scripts/ui.gd" id="1_y6b7m"]
+[ext_resource type="PackedScene" uid="uid://dvag2r8g7g2up" path="res://Scenes/Templates/resource_ui_card_template.tscn" id="2_f5gvv"]
+[ext_resource type="PackedScene" uid="uid://up5dlemgfc5r" path="res://Scenes/Templates/generator_info_popup_template.tscn" id="3_mxg63"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y6b7m")
+resource_ui_card_template = ExtResource("2_f5gvv")
+generator_info_popup_template = ExtResource("3_mxg63")
+
+[node name="Resources VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.043
+anchor_top = 0.077
+anchor_right = 0.174
+anchor_bottom = 0.077
+offset_left = 0.463997
+offset_top = 0.103996
+offset_right = -0.448013
+offset_bottom = 172.104
+theme_override_constants/separation = 10
+
+[node name="Resource UI Card Template" parent="Resources VBoxContainer" instance=ExtResource("2_f5gvv")]
+layout_mode = 2
+
+[node name="Resource UI Card Template2" parent="Resources VBoxContainer" instance=ExtResource("2_f5gvv")]
+layout_mode = 2
+
+[node name="Resource UI Card Template3" parent="Resources VBoxContainer" instance=ExtResource("2_f5gvv")]
+layout_mode = 2
+
+[node name="Resource UI Card Template4" parent="Resources VBoxContainer" instance=ExtResource("2_f5gvv")]
+layout_mode = 2
+
+[node name="Upgrade Actions VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.043
+anchor_top = 0.077
+anchor_right = 0.174
+anchor_bottom = 0.077
+offset_left = 150.464
+offset_top = 0.103996
+offset_right = 149.552
+offset_bottom = 172.104
+theme_override_constants/separation = 10
+
+[node name="Spawn 1" type="Button" parent="Upgrade Actions VBoxContainer"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+text = "Upgrade Resouce"
+
+[node name="Spawn 2" type="Button" parent="Upgrade Actions VBoxContainer"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+text = "Upgrade Resouce"
+
+[node name="Spawn 3" type="Button" parent="Upgrade Actions VBoxContainer"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+text = "Upgrade Resouce"
+
+[node name="Spawn 4" type="Button" parent="Upgrade Actions VBoxContainer"]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+text = "Upgrade Resouce"
+
+[connection signal="pressed" from="Upgrade Actions VBoxContainer/Spawn 1" to="." method="_on_spawn_1_pressed"]
+[connection signal="pressed" from="Upgrade Actions VBoxContainer/Spawn 2" to="." method="_on_spawn_1_pressed"]
+[connection signal="pressed" from="Upgrade Actions VBoxContainer/Spawn 3" to="." method="_on_spawn_1_pressed"]
+[connection signal="pressed" from="Upgrade Actions VBoxContainer/Spawn 4" to="." method="_on_spawn_1_pressed"]

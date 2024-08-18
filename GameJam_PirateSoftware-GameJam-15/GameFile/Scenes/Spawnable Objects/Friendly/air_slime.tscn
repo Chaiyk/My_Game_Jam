@@ -1,0 +1,107 @@
+[gd_scene load_steps=15 format=3 uid="uid://dd854tw5plpg1"]
+
+[ext_resource type="Script" path="res://Scripts/Spawnable Object Scripts/Friendly/air_slime.gd" id="1_23ue7"]
+[ext_resource type="Texture2D" uid="uid://bk51qpnfsdtvj" path="res://Images/Air Slime.png" id="2_gsun6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ja4c"]
+atlas = ExtResource("2_gsun6")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2v1v5"]
+atlas = ExtResource("2_gsun6")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2tb2"]
+atlas = ExtResource("2_gsun6")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_synk3"]
+atlas = ExtResource("2_gsun6")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rg14w"]
+atlas = ExtResource("2_gsun6")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2npc"]
+atlas = ExtResource("2_gsun6")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gs5pl"]
+atlas = ExtResource("2_gsun6")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsm7j"]
+atlas = ExtResource("2_gsun6")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hg2tw"]
+atlas = ExtResource("2_gsun6")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vqir6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ja4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2v1v5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2tb2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_synk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rg14w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2npc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gs5pl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsm7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hg2tw")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xreqt"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7d26r"]
+size = Vector2(21, 128)
+
+[node name="Air Slime" type="CharacterBody2D" groups=["Friendly"]]
+collision_mask = 0
+script = ExtResource("1_23ue7")
+mon_speed = 150.0
+mon_atk = 5.0
+mon_health = 3.0
+mon_def = 0.0
+mon_type = "Friendly"
+mon_mana_cost = 10.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -64)
+sprite_frames = SubResource("SpriteFrames_vqir6")
+animation = &"Walking"
+
+[node name="Hurt_Box" type="CollisionShape2D" parent="."]
+position = Vector2(0, -64)
+shape = SubResource("RectangleShape2D_xreqt")
+
+[node name="Hit_Box" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="Box_size" type="CollisionShape2D" parent="Hit_Box"]
+position = Vector2(74.5, -64)
+shape = SubResource("RectangleShape2D_7d26r")

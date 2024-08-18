@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8pw2jagnbuey"]
+
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_dhtw4"]
+[ext_resource type="PackedScene" uid="uid://cbatewrxqsqhv" path="res://Scenes/Templates/generator_template.tscn" id="2_s37vi"]
+[ext_resource type="PackedScene" uid="uid://dvpsv42rdw3g" path="res://Scenes/player.tscn" id="3_8cd5i"]
+[ext_resource type="PackedScene" uid="uid://cjmylrpc8w08p" path="res://Scenes/ui.tscn" id="4_gfuvg"]
+
+[node name="Main" type="Node2D"]
+position = Vector2(50, 50)
+scale = Vector2(1.02392, 1.0199)
+script = ExtResource("1_dhtw4")
+generator_template = ExtResource("2_s37vi")
+
+[node name="UI" parent="." node_paths=PackedStringArray("main") instance=ExtResource("4_gfuvg")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+main = NodePath("..")
+
+[node name="player" parent="." node_paths=PackedStringArray("main") instance=ExtResource("3_8cd5i")]
+unique_name_in_owner = true
+main = NodePath("..")

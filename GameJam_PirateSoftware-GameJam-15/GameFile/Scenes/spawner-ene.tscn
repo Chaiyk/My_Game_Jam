@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdrxisb7q60q5"]
+
+[ext_resource type="Script" path="res://Scripts/spawner-ene.gd" id="1_kb01s"]
+[ext_resource type="Texture2D" uid="uid://5a0r8hna6ofm" path="res://Images/ring.png" id="2_cfr32"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iq7up"]
+atlas = ExtResource("2_cfr32")
+region = Rect2(0, 0, 163, 361)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rlm1c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iq7up")
+}],
+"loop": true,
+"name": &"Bubbling",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="Node2D"]
+position = Vector2(-3, 0)
+script = ExtResource("1_kb01s")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -46)
+sprite_frames = SubResource("SpriteFrames_rlm1c")
+animation = &"Bubbling"
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-169, 129)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

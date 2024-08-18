@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbatewrxqsqhv"]
+
+[ext_resource type="Script" path="res://Scripts/generator.gd" id="1_c38su"]
+
+[node name="GeneratorTemplate" type="Node2D"]
+script = ExtResource("1_c38su")

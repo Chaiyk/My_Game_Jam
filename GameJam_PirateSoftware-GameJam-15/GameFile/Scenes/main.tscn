@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=3 uid="uid://c8pw2jagnbuey"]
+
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_dhtw4"]
+[ext_resource type="PackedScene" uid="uid://cbatewrxqsqhv" path="res://Scenes/Templates/generator_template.tscn" id="2_s37vi"]
+[ext_resource type="PackedScene" uid="uid://dvpsv42rdw3g" path="res://Scenes/player.tscn" id="3_8cd5i"]
+[ext_resource type="Texture2D" uid="uid://cogu42adty4ql" path="res://Images/BG.png" id="3_12gcd"]
+[ext_resource type="PackedScene" uid="uid://cjmylrpc8w08p" path="res://Scenes/ui.tscn" id="4_gfuvg"]
+[ext_resource type="PackedScene" uid="uid://cr38eu6v0ba24" path="res://Scenes/spawn_buttons.tscn" id="6_evys1"]
+[ext_resource type="PackedScene" uid="uid://bs5w31ntprs7v" path="res://Scenes/spawner.tscn" id="6_l6fs5"]
+[ext_resource type="PackedScene" uid="uid://bdrxisb7q60q5" path="res://Scenes/spawner-ene.tscn" id="8_em5mt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nivjj"]
+size = Vector2(91.8041, 634.376)
+
+[node name="Main" type="Node2D"]
+position = Vector2(50, 50)
+scale = Vector2(1.02392, 1.0199)
+script = ExtResource("1_dhtw4")
+generator_template = ExtResource("2_s37vi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1487.42, 168.644)
+texture = ExtResource("3_12gcd")
+
+[node name="player" parent="." node_paths=PackedStringArray("main") instance=ExtResource("3_8cd5i")]
+unique_name_in_owner = true
+main = NodePath("..")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(514.689, 266.693)
+limit_left = 0
+
+[node name="Right" type="Area2D" parent="Camera2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Right"]
+position = Vector2(517, 0)
+shape = SubResource("RectangleShape2D_nivjj")
+
+[node name="Left" type="Area2D" parent="Camera2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Left"]
+position = Vector2(-517, 0)
+shape = SubResource("RectangleShape2D_nivjj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" node_paths=PackedStringArray("main") instance=ExtResource("4_gfuvg")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 1
+grow_vertical = 1
+main = NodePath("../..")
+
+[node name="Spawn Buttons" parent="CanvasLayer" instance=ExtResource("6_evys1")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -65.0
+offset_bottom = -65.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="spawner" parent="." instance=ExtResource("6_l6fs5")]
+position = Vector2(46.8787, 418.668)
+
+[node name="Enemy" parent="." instance=ExtResource("8_em5mt")]
+position = Vector2(2935.78, 420.629)
+
+[connection signal="mouse_entered" from="Camera2D/Right" to="." method="_on_right_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/Right" to="." method="_on_right_mouse_exited"]
+[connection signal="mouse_entered" from="Camera2D/Left" to="." method="_on_left_mouse_entered"]
+[connection signal="mouse_exited" from="Camera2D/Left" to="." method="_on_left_mouse_exited"]

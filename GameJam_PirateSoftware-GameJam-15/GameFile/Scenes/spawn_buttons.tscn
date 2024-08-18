@@ -1,0 +1,115 @@
+[gd_scene load_steps=8 format=3 uid="uid://cr38eu6v0ba24"]
+
+[ext_resource type="Script" path="res://Scripts/spawn_buttons.gd" id="1_pf2ul"]
+[ext_resource type="Texture2D" uid="uid://rapgxboi6vr5" path="res://Images/Air Slime - 1.png" id="2_dlbn7"]
+[ext_resource type="Texture2D" uid="uid://buksgnfdlntn5" path="res://Images/Earth Slime - 1.png" id="3_2ayqx"]
+[ext_resource type="Texture2D" uid="uid://dmbhkgkn82qwf" path="res://Images/Fire Slime - 1.png" id="4_paoid"]
+[ext_resource type="Texture2D" uid="uid://c6hmt1oxw4om1" path="res://Images/Ice Slime - 1.png" id="5_emp37"]
+[ext_resource type="Texture2D" uid="uid://b4h8ws4vbx5tc" path="res://Images/Obsidian Slime - 1.png" id="6_l0q73"]
+[ext_resource type="Texture2D" uid="uid://b2fpvyj4vfg1m" path="res://Images/Storm Slime - 1.png" id="7_83k8f"]
+
+[node name="Spawn Buttons" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_pf2ul")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -421.5
+offset_top = -64.0
+offset_right = 421.5
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Air" type="TextureButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture_normal = ExtResource("2_dlbn7")
+ignore_texture_size = true
+
+[node name="Panel" type="Panel" parent="HBoxContainer/Air"]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+mouse_filter = 2
+
+[node name="Earth" type="TextureButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture_normal = ExtResource("3_2ayqx")
+ignore_texture_size = true
+
+[node name="Panel" type="Panel" parent="HBoxContainer/Earth"]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+mouse_filter = 2
+
+[node name="Ice" type="TextureButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture_normal = ExtResource("5_emp37")
+ignore_texture_size = true
+
+[node name="Panel" type="Panel" parent="HBoxContainer/Ice"]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+mouse_filter = 2
+
+[node name="Fire" type="TextureButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture_normal = ExtResource("4_paoid")
+ignore_texture_size = true
+
+[node name="Panel" type="Panel" parent="HBoxContainer/Fire"]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+mouse_filter = 2
+
+[node name="Storm" type="TextureButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture_normal = ExtResource("6_l0q73")
+ignore_texture_size = true
+
+[node name="Panel" type="Panel" parent="HBoxContainer/Storm"]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+mouse_filter = 2
+
+[node name="Obsidian" type="TextureButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture_normal = ExtResource("7_83k8f")
+ignore_texture_size = true
+
+[node name="Panel" type="Panel" parent="HBoxContainer/Obsidian"]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+mouse_filter = 2
+
+[connection signal="pressed" from="HBoxContainer/Air" to="." method="_on_air_pressed"]
+[connection signal="pressed" from="HBoxContainer/Earth" to="." method="_on_earth_pressed"]
+[connection signal="pressed" from="HBoxContainer/Ice" to="." method="_on_ice_pressed"]
+[connection signal="pressed" from="HBoxContainer/Fire" to="." method="_on_fire_pressed"]
+[connection signal="pressed" from="HBoxContainer/Storm" to="." method="_on_storm_pressed"]
+[connection signal="pressed" from="HBoxContainer/Obsidian" to="." method="_on_obsidian_pressed"]

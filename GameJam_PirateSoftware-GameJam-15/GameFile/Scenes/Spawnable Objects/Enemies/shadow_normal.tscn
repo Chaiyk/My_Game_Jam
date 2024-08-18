@@ -1,0 +1,78 @@
+[gd_scene load_steps=11 format=3 uid="uid://c22s854vgd7sb"]
+
+[ext_resource type="Script" path="res://Scripts/Spawnable Object Scripts/Enemies/shadow_normal.gd" id="1_q3olk"]
+[ext_resource type="Texture2D" uid="uid://bwcok0wawhr7i" path="res://Images/Shadow.png" id="2_bicqt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fl87k"]
+atlas = ExtResource("2_bicqt")
+region = Rect2(1024, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_376ae"]
+atlas = ExtResource("2_bicqt")
+region = Rect2(896, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nw6s"]
+atlas = ExtResource("2_bicqt")
+region = Rect2(768, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4v8go"]
+atlas = ExtResource("2_bicqt")
+region = Rect2(640, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsfqq"]
+atlas = ExtResource("2_bicqt")
+region = Rect2(512, 0, 128, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_asw7c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fl87k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_376ae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nw6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4v8go")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsfqq")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xreqt"]
+size = Vector2(127, 222)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbdp5"]
+size = Vector2(23, 222)
+
+[node name="Shadow Normal" type="CharacterBody2D" groups=["Enemy"]]
+collision_mask = 0
+script = ExtResource("1_q3olk")
+mon_atk = 2.0
+mon_def = 1.0
+mon_type = "Enemy"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -128)
+sprite_frames = SubResource("SpriteFrames_asw7c")
+animation = &"Walking"
+frame_progress = 0.365021
+
+[node name="Hurt_Box" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -111)
+shape = SubResource("RectangleShape2D_xreqt")
+
+[node name="Hit_Box" type="Area2D" parent="."]
+position = Vector2(0, -128)
+collision_layer = 0
+
+[node name="Box_Size" type="CollisionShape2D" parent="Hit_Box"]
+position = Vector2(-74.5, 17)
+shape = SubResource("RectangleShape2D_xbdp5")

@@ -1,0 +1,226 @@
+[gd_scene load_steps=6 format=3 uid="uid://up5dlemgfc5r"]
+
+[ext_resource type="Script" path="res://Scripts/generator_info_popup.gd" id="1_vy243"]
+[ext_resource type="Texture2D" uid="uid://b6s38wu13eo2u" path="res://icon.svg" id="2_86r6e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5xi8v"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jho0q"]
+font_size = 100
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3coh4"]
+
+[node name="GeneratorInfoPopupTemplate" type="Control" node_paths=PackedStringArray("title_label", "current_tier_label", "current_speed_label", "current_amount_label", "upgraded_tier_label", "upgraded_speed_label", "upgraded_amount_label", "resources_required_label", "close_button", "upgrade_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vy243")
+title_label = NodePath("Background/Main Panel/Title")
+current_tier_label = NodePath("Background/Main Panel/Current Info Container/VBoxContainer/Tier")
+current_speed_label = NodePath("Background/Main Panel/Current Info Container/VBoxContainer/Speed")
+current_amount_label = NodePath("Background/Main Panel/Current Info Container/VBoxContainer/Amount")
+upgraded_tier_label = NodePath("Background/Main Panel/Upgraded Info Container/VBoxContainer/Tier")
+upgraded_speed_label = NodePath("Background/Main Panel/Upgraded Info Container/VBoxContainer/Speed")
+upgraded_amount_label = NodePath("Background/Main Panel/Upgraded Info Container/VBoxContainer/Amount")
+resources_required_label = NodePath("Background/Main Panel/Require Label")
+close_button = NodePath("Background/Main Panel/Close Button")
+upgrade_button = NodePath("Background/Main Panel/Upgrade Button")
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5xi8v")
+
+[node name="Main Panel" type="Panel" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1875
+anchor_top = 0.0771605
+anchor_right = 0.8125
+anchor_bottom = 0.92284
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="Background/Main Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.091
+offset_top = 20.0
+offset_bottom = 20.132
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Resource Generator"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Current Info Container" type="Panel" parent="Background/Main Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.069
+anchor_top = 0.182
+anchor_right = 0.417
+anchor_bottom = 0.73
+offset_left = 0.319996
+offset_top = 0.263992
+offset_right = -0.240021
+offset_bottom = -0.0400085
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/Main Panel/Current Info Container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Tier" type="Label" parent="Background/Main Panel/Current Info Container/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Generator Tier: 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Speed" type="Label" parent="Background/Main Panel/Current Info Container/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Generating Speed: 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Amount" type="Label" parent="Background/Main Panel/Current Info Container/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Generate Amount: 5"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Upgraded Info Container" type="Panel" parent="Background/Main Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.583
+anchor_top = 0.182
+anchor_right = 0.931
+anchor_bottom = 0.73
+offset_left = 0.23999
+offset_top = 0.263985
+offset_right = -0.320068
+offset_bottom = -0.0400085
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/Main Panel/Upgraded Info Container"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Tier" type="Label" parent="Background/Main Panel/Upgraded Info Container/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Generator Tier: 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Speed" type="Label" parent="Background/Main Panel/Upgraded Info Container/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Generating Speed: 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Amount" type="Label" parent="Background/Main Panel/Upgraded Info Container/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Generate Amount: 10"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Arrow Label" type="Label" parent="Background/Main Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.46
+anchor_top = 0.331
+anchor_right = 0.54
+anchor_bottom = 0.581
+offset_left = 0.299988
+offset_top = 0.11203
+offset_right = -0.300018
+offset_bottom = 0.111969
+grow_vertical = 2
+text = ">"
+label_settings = SubResource("LabelSettings_jho0q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Close Button" type="Button" parent="Background/Main Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.965
+anchor_top = -0.046
+anchor_right = 1.035
+anchor_bottom = 0.046
+offset_left = 0.199951
+offset_top = 0.208002
+offset_right = -0.200073
+offset_bottom = -0.208002
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3coh4")
+icon = ExtResource("2_86r6e")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Require Label" type="Label" parent="Background/Main Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.091
+offset_top = 421.0
+offset_bottom = 401.132
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 20
+text = "Require 150 Resource"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Upgrade Button" type="Button" parent="Background/Main Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.361
+anchor_top = 0.836
+anchor_right = 0.639
+anchor_bottom = 0.927
+offset_left = 0.0799866
+offset_top = -0.12796
+offset_right = -0.0800476
+offset_bottom = 0.0039978
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3coh4")
+text = "Upgrade"

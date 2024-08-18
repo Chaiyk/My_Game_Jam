@@ -1,0 +1,105 @@
+[gd_scene load_steps=15 format=3 uid="uid://bqv2n4gwmoh1w"]
+
+[ext_resource type="Script" path="res://Scripts/Spawnable Object Scripts/Friendly/fire_slime.gd" id="1_8ppca"]
+[ext_resource type="Texture2D" uid="uid://bkx5lgq27ea88" path="res://Images/Fire Slime.png" id="2_cg1ti"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sixlu"]
+atlas = ExtResource("2_cg1ti")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knpyb"]
+atlas = ExtResource("2_cg1ti")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hn76"]
+atlas = ExtResource("2_cg1ti")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7v6i"]
+atlas = ExtResource("2_cg1ti")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xr5nv"]
+atlas = ExtResource("2_cg1ti")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f875h"]
+atlas = ExtResource("2_cg1ti")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wd2ij"]
+atlas = ExtResource("2_cg1ti")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6s1n"]
+atlas = ExtResource("2_cg1ti")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvi6w"]
+atlas = ExtResource("2_cg1ti")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vqir6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sixlu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_knpyb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hn76")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7v6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xr5nv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f875h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wd2ij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6s1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvi6w")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xreqt"]
+size = Vector2(113, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rc1u"]
+size = Vector2(21, 128)
+
+[node name="Fire Slime" type="CharacterBody2D" groups=["Friendly"]]
+collision_mask = 2
+script = ExtResource("1_8ppca")
+mon_atk = 4.0
+mon_def = 2.0
+mon_type = "Friendly"
+mon_mana_cost = 10.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -64)
+sprite_frames = SubResource("SpriteFrames_vqir6")
+animation = &"Walking"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -64)
+shape = SubResource("RectangleShape2D_xreqt")
+
+[node name="Hit_Box" type="Area2D" parent="."]
+position = Vector2(0, -52)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hit_Box"]
+position = Vector2(66.5, -12)
+shape = SubResource("RectangleShape2D_7rc1u")

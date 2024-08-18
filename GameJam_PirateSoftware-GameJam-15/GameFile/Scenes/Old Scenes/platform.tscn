@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx2qxhc1jsp1t"]
+
+[ext_resource type="Script" path="res://Scripts/Old Scripts/platform.gd" id="1_hqc2l"]
+[ext_resource type="Texture2D" uid="uid://b6s38wu13eo2u" path="res://icon.svg" id="1_onso2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0s8qj"]
+size = Vector2(128, 128)
+
+[node name="Platform" type="Node2D"]
+position = Vector2(64, 64)
+script = ExtResource("1_hqc2l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_onso2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_0s8qj")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_0s8qj")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
