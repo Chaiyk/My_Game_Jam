@@ -1,4 +1,4 @@
-Game Jam: [Acerola Jam 0](https://itch.io/jam/acerola-jam-0)<tab>
+Game Jam: [Acerola Jam 0](https://itch.io/jam/acerola-jam-0)<br>
 Game Name: [Escape From The Unknown](https://joxyy.itch.io/escape-from-the-unknown)
 
 Description:
