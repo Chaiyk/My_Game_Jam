@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://ia543w2lgmtc"]
+
+[ext_resource type="Texture2D" uid="uid://rlv1ay2qkdq7" path="res://Sprite/icon.svg" id="1_bmpkb"]
+[ext_resource type="Script" path="res://Script/Door Area2D.gd" id="1_pgfmb"]
+[ext_resource type="Texture2D" uid="uid://ccp8gphufoxa6" path="res://Xelu_Free_Controller&Key_Prompts/Keyboard & Mouse/Dark/E_Key_Dark.png" id="2_dxful"]
+[ext_resource type="Texture2D" uid="uid://blabyk4kbk0do" path="res://Sprite/New-Key.png" id="4_g6bgh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1gpi"]
+size = Vector2(30, 38)
+
+[sub_resource type="LabelSettings" id="LabelSettings_r4st4"]
+
+[node name="DoorArea2d" type="Area2D"]
+script = ExtResource("1_pgfmb")
+canInteract = true
+interactableName = "Door"
+action = "Enter"
+keyTexture = ExtResource("2_dxful")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_s1gpi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.1875, 0.1875)
+texture = ExtResource("1_bmpkb")
+
+[node name="Key Label" type="Label" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 1.0
+offset_top = -35.0
+offset_right = 11.0
+offset_bottom = -12.0
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_r4st4")
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Key Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-8, -22)
+texture = ExtResource("4_g6bgh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

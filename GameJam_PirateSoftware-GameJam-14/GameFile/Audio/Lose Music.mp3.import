@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bg27nyxegdg8d"
+path="res://.godot/imported/Lose Music.mp3-ea21ee10820dd10f1f76a86b125822a7.mp3str"
+
+[deps]
+
+source_file="res://Audio/Lose Music.mp3"
+dest_files=["res://.godot/imported/Lose Music.mp3-ea21ee10820dd10f1f76a86b125822a7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

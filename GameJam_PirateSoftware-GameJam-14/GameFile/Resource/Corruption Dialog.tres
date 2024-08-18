@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Dialogue_Resource" load_steps=2 format=3 uid="uid://dafn42gd6a72i"]
+
+[ext_resource type="Script" path="res://Script/Resource/Dialog Resource.gd" id="1_gkp7j"]
+
+[resource]
+script = ExtResource("1_gkp7j")
+first_dialog = Array[String](["Something feels wrong..", "I feel weird..", "It's a little cold down here..", "Where am I?"])
+warning_dialog = Array[String](["Is something behind that corner..?", "I feel like something's following me..", "I hear whispering voices in my head..", "I have a bad feeling about this..", "I feel something slowly creeping up.."])
+switch_dialog = Array[String](["Who's there?!", "Show yourself!", "I know you're there!"])
+flip_movement_dialog = Array[String](["My legs feels weird..", "I don't feel so good..", "I'm feeling light-headed.."])
+random_movement_dialog = Array[String](["It's getting worse!", "I have to get out soon..", "I cant control it any longer!"])

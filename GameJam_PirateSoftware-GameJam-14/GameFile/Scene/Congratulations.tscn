@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://bf77jpwdggq3g"]
+
+[ext_resource type="Script" path="res://Script/Congratulations.gd" id="1_5vqc7"]
+[ext_resource type="StyleBox" uid="uid://7e2pgi2dys2s" path="res://ButtonStyle/NormalButton.tres" id="2_p1pay"]
+[ext_resource type="StyleBox" uid="uid://b3ver1lqr74y8" path="res://ButtonStyle/ButtonHover.tres" id="3_71fiq"]
+[ext_resource type="StyleBox" uid="uid://n54eek8w4ulu" path="res://ButtonStyle/ButtonPressed.tres" id="4_hlbp7"]
+[ext_resource type="StyleBox" uid="uid://cgta8mkgk78qq" path="res://ButtonStyle/ButtonFocus.tres" id="5_u4ky2"]
+
+[node name="Congratulations" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5vqc7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0, 0.156863, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -290.0
+offset_top = -123.0
+offset_right = 291.0
+offset_bottom = 193.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="ColorRect/RichTextLabel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -174.0
+offset_top = -72.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+
+[node name="Timer" type="Timer" parent="ColorRect"]
+wait_time = 0.05
+
+[node name="Menu" type="Button" parent="ColorRect"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -88.0
+offset_right = 160.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = ExtResource("2_p1pay")
+theme_override_styles/hover = ExtResource("3_71fiq")
+theme_override_styles/pressed = ExtResource("4_hlbp7")
+theme_override_styles/focus = ExtResource("5_u4ky2")
+text = "Menu"
+
+[connection signal="pressed" from="ColorRect/Menu" to="." method="_on_menu_pressed"]

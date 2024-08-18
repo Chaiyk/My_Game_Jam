@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://bp2h08q5odkb7"]
+
+[ext_resource type="Script" path="res://Script/Main.gd" id="1_hsvjv"]
+[ext_resource type="PackedScene" uid="uid://bngbxcqicomc0" path="res://Scene/Player.tscn" id="1_pf1y7"]
+[ext_resource type="PackedScene" uid="uid://b46pftotapgft" path="res://Scene/FinalTutorial.tscn" id="4_lcjip"]
+[ext_resource type="PackedScene" uid="uid://c5yxt8ox0vqne" path="res://Scene/HUD.tscn" id="4_pvvm0"]
+[ext_resource type="PackedScene" uid="uid://k35g88sntqh3" path="res://Scene/Level_2.tscn" id="5_4kfbi"]
+[ext_resource type="PackedScene" uid="uid://c3ghfcu3pcddu" path="res://Scene/Level_3.tscn" id="6_lctvt"]
+
+[node name="Main" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_hsvjv")
+
+[node name="Player" parent="." instance=ExtResource("1_pf1y7")]
+knockback_force = 0.5
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hud" parent="CanvasLayer" instance=ExtResource("4_pvvm0")]
+
+[node name="Level" parent="." instance=ExtResource("4_lcjip")]
+
+[node name="Level2" parent="." instance=ExtResource("5_4kfbi")]
+position = Vector2(0, 1424)
+
+[node name="Level3" parent="." instance=ExtResource("6_lctvt")]
+position = Vector2(3845, 0)

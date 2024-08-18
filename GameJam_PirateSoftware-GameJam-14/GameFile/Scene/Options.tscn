@@ -1,0 +1,149 @@
+[gd_scene load_steps=6 format=3 uid="uid://cefqsp7cj3k3"]
+
+[ext_resource type="Script" path="res://Script/Options.gd" id="1_yf4al"]
+[ext_resource type="StyleBox" uid="uid://7e2pgi2dys2s" path="res://ButtonStyle/NormalButton.tres" id="2_h33b1"]
+[ext_resource type="StyleBox" uid="uid://b3ver1lqr74y8" path="res://ButtonStyle/ButtonHover.tres" id="3_6qc4r"]
+[ext_resource type="StyleBox" uid="uid://n54eek8w4ulu" path="res://ButtonStyle/ButtonPressed.tres" id="4_5mios"]
+[ext_resource type="StyleBox" uid="uid://cgta8mkgk78qq" path="res://ButtonStyle/ButtonFocus.tres" id="5_4tjgd"]
+
+[node name="Options" type="Control" node_paths=PackedStringArray("master_slider", "music_slider", "effect_slider")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yf4al")
+master_slider = NodePath("ColorRect/SliderContainer/Master")
+music_slider = NodePath("ColorRect/SliderContainer/Music")
+effect_slider = NodePath("ColorRect/SliderContainer/Effect")
+master_bus_name = "Master"
+music_bus_name = "Music"
+effect_bus_name = "Effect"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0, 0.156863, 1)
+
+[node name="SliderContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -124.0
+offset_right = 365.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+
+[node name="Master" type="HSlider" parent="ColorRect/SliderContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+
+[node name="Music" type="HSlider" parent="ColorRect/SliderContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+
+[node name="Effect" type="HSlider" parent="ColorRect/SliderContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+
+[node name="LabelContainer" type="Control" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 267.0
+offset_top = -145.0
+offset_right = 638.0
+offset_bottom = 145.0
+grow_vertical = 2
+
+[node name="MasterLabel" type="RichTextLabel" parent="ColorRect/LabelContainer"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -137.5
+offset_right = 137.5
+offset_bottom = 75.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "Master
+"
+
+[node name="MusicLabel" type="RichTextLabel" parent="ColorRect/LabelContainer"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.5
+offset_top = -34.0
+offset_right = 137.5
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "Music
+"
+
+[node name="EffectLabel" type="RichTextLabel" parent="ColorRect/LabelContainer"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -137.5
+offset_top = -68.0
+offset_right = 137.5
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/normal_font_size = 50
+text = "Effect
+"
+
+[node name="Back" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -128.0
+offset_right = 160.0
+offset_bottom = -71.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = ExtResource("2_h33b1")
+theme_override_styles/hover = ExtResource("3_6qc4r")
+theme_override_styles/pressed = ExtResource("4_5mios")
+theme_override_styles/focus = ExtResource("5_4tjgd")
+text = "Back"
+
+[connection signal="mouse_exited" from="ColorRect/SliderContainer/Master" to="." method="_on_master_mouse_exited"]
+[connection signal="value_changed" from="ColorRect/SliderContainer/Master" to="." method="_on_master_value_changed"]
+[connection signal="mouse_exited" from="ColorRect/SliderContainer/Music" to="." method="_on_music_mouse_exited"]
+[connection signal="value_changed" from="ColorRect/SliderContainer/Music" to="." method="_on_music_value_changed"]
+[connection signal="mouse_exited" from="ColorRect/SliderContainer/Effect" to="." method="_on_effect_mouse_exited"]
+[connection signal="value_changed" from="ColorRect/SliderContainer/Effect" to="." method="_on_effect_value_changed"]
+[connection signal="pressed" from="ColorRect/Back" to="." method="_on_back_pressed"]

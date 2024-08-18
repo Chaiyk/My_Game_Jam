@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://b75e011ulhukf"]
+
+[ext_resource type="Script" path="res://Enemy.gd" id="1_oymyu"]
+[ext_resource type="Texture2D" uid="uid://rlv1ay2qkdq7" path="res://Sprite/icon.svg" id="1_wq6r3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgj7a"]
+size = Vector2(45, 104)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqksy"]
+size = Vector2(129, 129)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bsoce"]
+radius = 411.274
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jaqrf"]
+radius = 191.003
+
+[node name="Enemy" type="CharacterBody2D"]
+position = Vector2(-2, -70)
+script = ExtResource("1_oymyu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 5)
+texture = ExtResource("1_wq6r3")
+metadata/_edit_group_ = true
+
+[node name="Attack_Active" type="Area2D" parent="Sprite2D"]
+position = Vector2(0, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Attack_Active"]
+position = Vector2(-87, 6)
+shape = SubResource("RectangleShape2D_fgj7a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_eqksy")
+metadata/_edit_group_ = true
+
+[node name="Detection_Zone" type="Area2D" parent="."]
+visible = false
+position = Vector2(2, 5)
+collision_layer = 2
+collision_mask = 2
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection_Zone"]
+shape = SubResource("CircleShape2D_bsoce")
+
+[node name="Attack_Zone" type="Area2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_Zone"]
+shape = SubResource("CircleShape2D_jaqrf")
+
+[connection signal="body_entered" from="Sprite2D/Attack_Active" to="." method="_on_attack_active_body_entered"]
+[connection signal="body_entered" from="Detection_Zone" to="." method="_on_detection_zone_body_entered"]
+[connection signal="body_exited" from="Detection_Zone" to="." method="_on_detection_zone_body_exited"]
+[connection signal="body_entered" from="Attack_Zone" to="." method="_on_attack_zone_body_entered"]
+[connection signal="body_exited" from="Attack_Zone" to="." method="_on_attack_zone_body_exited"]

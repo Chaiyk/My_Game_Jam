@@ -1,0 +1,146 @@
+[gd_scene load_steps=18 format=3 uid="uid://ni4wyu4lhydd"]
+
+[ext_resource type="Script" path="res://Script/testlevel1.gd" id="1_5it6d"]
+[ext_resource type="PackedScene" uid="uid://crlmsim3tit04" path="res://Scene/Rooms/Room 2.tscn" id="1_6hllf"]
+[ext_resource type="PackedScene" uid="uid://btkws1y1e7tbf" path="res://Scene/Connectors/Down.tscn" id="2_au7cg"]
+[ext_resource type="PackedScene" uid="uid://cxo0mt28i3xp7" path="res://Scene/Rooms/Room 5.tscn" id="3_nrafl"]
+[ext_resource type="PackedScene" uid="uid://cki3gyqtcxyvx" path="res://Scene/Rooms/Room 6.tscn" id="4_86fmw"]
+[ext_resource type="PackedScene" uid="uid://bx0yat8bigmap" path="res://Scene/Rooms/Room 7.tscn" id="5_ejgwe"]
+[ext_resource type="PackedScene" uid="uid://kkad1oi5qus" path="res://Scene/Rooms/Room 8.tscn" id="6_cvm4l"]
+[ext_resource type="PackedScene" uid="uid://d0x0gvb2fp5ra" path="res://Scene/Rooms/Room 9.tscn" id="7_3rcb7"]
+[ext_resource type="PackedScene" uid="uid://b5tge53pgumxp" path="res://Scene/Rooms/Room 10.tscn" id="8_ay043"]
+[ext_resource type="PackedScene" uid="uid://djrfexqov6mtu" path="res://Scene/Rooms/Room 11.tscn" id="9_p5o7f"]
+[ext_resource type="PackedScene" uid="uid://c2s30i2jaefi5" path="res://Scene/Rooms/Room 12.tscn" id="10_sxnhu"]
+[ext_resource type="PackedScene" uid="uid://cyfybgrobpkjk" path="res://Scene/Rooms/Room 14.tscn" id="11_jvcyt"]
+[ext_resource type="PackedScene" uid="uid://kecbat0yjbm2" path="res://Scene/Paths/Path 2.tscn" id="12_4c2rn"]
+[ext_resource type="PackedScene" uid="uid://bhbt4nc0q1ew1" path="res://Scene/Paths/Vertical Corridor.tscn" id="13_k78mn"]
+[ext_resource type="PackedScene" uid="uid://bmf233iqiy52n" path="res://Scene/Rooms/Room 4.tscn" id="14_o4e8n"]
+[ext_resource type="PackedScene" uid="uid://ia543w2lgmtc" path="res://Scene/Door Area2D.tscn" id="15_m28hl"]
+[ext_resource type="PackedScene" uid="uid://b75e011ulhukf" path="res://Scene/Enemy.tscn" id="17_wx088"]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_5it6d")
+
+[node name="Room 2" parent="." instance=ExtResource("1_6hllf")]
+
+[node name="Room 3" parent="." instance=ExtResource("2_au7cg")]
+position = Vector2(576, -2)
+
+[node name="Room 5" parent="." instance=ExtResource("3_nrafl")]
+position = Vector2(1152, -3)
+
+[node name="Room 6" parent="." instance=ExtResource("4_86fmw")]
+position = Vector2(0, 575)
+
+[node name="Room 7" parent="." instance=ExtResource("5_ejgwe")]
+position = Vector2(576, 574)
+
+[node name="Room 8" parent="." instance=ExtResource("6_cvm4l")]
+position = Vector2(1152, 572)
+
+[node name="Room 9" parent="." instance=ExtResource("7_3rcb7")]
+position = Vector2(-2, 1723)
+
+[node name="Room 10" parent="." instance=ExtResource("8_ay043")]
+position = Vector2(1729, 60)
+
+[node name="Room 11" parent="." instance=ExtResource("9_p5o7f")]
+position = Vector2(576, 1147)
+
+[node name="Room 12" parent="." instance=ExtResource("10_sxnhu")]
+position = Vector2(0, 1147)
+
+[node name="Room 14" parent="." instance=ExtResource("11_jvcyt")]
+position = Vector2(1728, 1180)
+
+[node name="Break" type="Node3D" parent="."]
+
+[node name="Room 20" parent="." instance=ExtResource("9_p5o7f")]
+position = Vector2(-2272, 652)
+
+[node name="Room 13" parent="." instance=ExtResource("3_nrafl")]
+position = Vector2(-818, 1530)
+
+[node name="LPath" parent="." instance=ExtResource("12_4c2rn")]
+position = Vector2(-466, 636)
+rotation = 3.14159
+
+[node name="LPath2" parent="." instance=ExtResource("12_4c2rn")]
+position = Vector2(-2256, -228)
+rotation = 1.5708
+
+[node name="LPath4" parent="." instance=ExtResource("12_4c2rn")]
+position = Vector2(-1904, 92)
+rotation = -3.14159
+
+[node name="LPath5" parent="." instance=ExtResource("12_4c2rn")]
+position = Vector2(-2591, 684)
+
+[node name="Room 4" parent="." instance=ExtResource("2_au7cg")]
+position = Vector2(-785, 668)
+rotation = -3.14159
+
+[node name="Room 16" parent="." instance=ExtResource("11_jvcyt")]
+position = Vector2(-801, 668)
+rotation = 1.5708
+
+[node name="Room 17" parent="." instance=ExtResource("5_ejgwe")]
+position = Vector2(-785, 92)
+rotation = 3.14159
+
+[node name="Room 18" parent="." instance=ExtResource("6_cvm4l")]
+position = Vector2(-2256, 76)
+
+[node name="Room 15" parent="." instance=ExtResource("3_nrafl")]
+position = Vector2(-242, 635)
+rotation = 1.5708
+
+[node name="Room 19" parent="." instance=ExtResource("5_ejgwe")]
+position = Vector2(-1712, 1547)
+rotation = 1.5708
+
+[node name="StraightPath" parent="." instance=ExtResource("13_k78mn")]
+position = Vector2(-594, 1210)
+
+[node name="StraightPath2" parent="." instance=ExtResource("13_k78mn")]
+position = Vector2(-1360, 316)
+rotation = 1.5708
+
+[node name="StraightPath4" parent="." instance=ExtResource("13_k78mn")]
+position = Vector2(-1376, 892)
+rotation = 1.5708
+
+[node name="StraightPath5" parent="." instance=ExtResource("13_k78mn")]
+position = Vector2(-2064, 1227)
+
+[node name="StraightPath6" parent="." instance=ExtResource("13_k78mn")]
+position = Vector2(-1392, 1771)
+rotation = 1.5708
+
+[node name="StraightPath7" parent="." instance=ExtResource("13_k78mn")]
+position = Vector2(-2463, 908)
+rotation = -3.14159
+
+[node name="StraightPath8" parent="." instance=ExtResource("13_k78mn")]
+position = Vector2(-2081, -228)
+rotation = 1.5708
+
+[node name="StraightPath9" parent="." instance=ExtResource("13_k78mn")]
+position = Vector2(-1169, 1243)
+
+[node name="Room 22" parent="." instance=ExtResource("14_o4e8n")]
+position = Vector2(-2239, 60)
+rotation = 1.5708
+
+[node name="Room 21" parent="." instance=ExtResource("14_o4e8n")]
+position = Vector2(-1393, 1547)
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(-1107, 1849)
+
+[node name="DoorArea2d" parent="." instance=ExtResource("15_m28hl")]
+position = Vector2(-935, 1833)
+scene_path = "res://Tutorial.tscn"
+
+[node name="Enemy" parent="." instance=ExtResource("17_wx088")]
+position = Vector2(823, 478)

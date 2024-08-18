@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://bfuowfy1p6otd"]
+
+[ext_resource type="AudioStream" uid="uid://bls2hjm8s10ps" path="res://Audio/Hit.wav" id="2_8x45u"]
+[ext_resource type="AudioStream" uid="uid://uy25cvtv2nat" path="res://Audio/Key Pick Up.wav" id="2_2788m"]
+[ext_resource type="AudioStream" uid="uid://boe1vgvsvrk61" path="res://Audio/Potion Pick Up.wav" id="3_rlq6l"]
+[ext_resource type="AudioStream" uid="uid://rivu3sisqsfp" path="res://Audio/Corruption.wav" id="4_ybylv"]
+[ext_resource type="AudioStream" uid="uid://5axtd6a0vxnj" path="res://Audio/Sword Swing.wav" id="5_gausp"]
+
+[node name="Sound Effect" type="Node2D"]
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_8x45u")
+volume_db = 10.0
+pitch_scale = 2.0
+bus = &"Effect"
+
+[node name="Pick Up_Key" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_2788m")
+pitch_scale = 1.5
+bus = &"Effect"
+
+[node name="Pick Up_Potion" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_rlq6l")
+bus = &"Effect"
+
+[node name="Corruption" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ybylv")
+volume_db = 0.3
+pitch_scale = 0.1
+
+[node name="Sword Swing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_gausp")
+pitch_scale = 0.7
+bus = &"Effect"

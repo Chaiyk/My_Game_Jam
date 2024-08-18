@@ -1,0 +1,216 @@
+[gd_scene load_steps=20 format=3 uid="uid://c5yxt8ox0vqne"]
+
+[ext_resource type="Script" path="res://Script/HUD.gd" id="1_7xlxw"]
+[ext_resource type="Resource" uid="uid://dafn42gd6a72i" path="res://Resource/Corruption Dialog.tres" id="2_8o0x8"]
+[ext_resource type="Texture2D" uid="uid://xy5xk66qnvqd" path="res://Sprite/heart.png" id="3_b0xh1"]
+[ext_resource type="Texture2D" uid="uid://d4jkg30byef47" path="res://Sprite/skeleton.png" id="3_spqrm"]
+[ext_resource type="Texture2D" uid="uid://cchg5slixan7h" path="res://Sprite/fire.png" id="4_vdwpt"]
+[ext_resource type="Texture2D" uid="uid://w8u4p316k50k" path="res://Xelu_Free_Controller&Key_Prompts/Keyboard & Mouse/Dark/1_Key_Dark.png" id="5_omld2"]
+[ext_resource type="Texture2D" uid="uid://dmfevju67la5i" path="res://Sprite/swordsprite.png" id="6_xc7vf"]
+[ext_resource type="Texture2D" uid="uid://d2rbcqbgquv5y" path="res://Xelu_Free_Controller&Key_Prompts/Keyboard & Mouse/Dark/2_Key_Dark.png" id="7_ufr8p"]
+[ext_resource type="Texture2D" uid="uid://2ln04dwjio3g" path="res://Sprite/torchsprite.png" id="8_0a1r1"]
+[ext_resource type="Texture2D" uid="uid://cy0uj6dyydx8x" path="res://Xelu_Free_Controller&Key_Prompts/Keyboard & Mouse/Dark/Space_Key_Dark.png" id="9_qv3lj"]
+[ext_resource type="Texture2D" uid="uid://blabyk4kbk0do" path="res://Sprite/New-Key.png" id="10_ng1il"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1k0y8"]
+bg_color = Color(0.364706, 0.364706, 0.364706, 0.992157)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82xem"]
+bg_color = Color(0, 0.717647, 0.352941, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_x2fsq"]
+font_size = 17
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y8vkv"]
+bg_color = Color(0.364706, 0.364706, 0.364706, 0.992157)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wetyw"]
+bg_color = Color(0.235294, 0, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i3rkw"]
+bg_color = Color(0.364706, 0.364706, 0.364706, 0.992157)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qf3no"]
+bg_color = Color(0.980392, 0.372549, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_lfvqg"]
+font_size = 18
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7xlxw")
+corruption_dialog = ExtResource("2_8o0x8")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 395.0
+offset_bottom = 77.0
+theme_override_styles/background = SubResource("StyleBoxFlat_1k0y8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_82xem")
+step = 1.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="HealthBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -14.0
+offset_right = 20.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0%"
+label_settings = SubResource("LabelSettings_x2fsq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="HealthBar"]
+position = Vector2(8, 10)
+scale = Vector2(0.370833, 0.370833)
+texture = ExtResource("3_b0xh1")
+
+[node name="CorruptionBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 100.0
+offset_right = 395.0
+offset_bottom = 127.0
+theme_override_styles/background = SubResource("StyleBoxFlat_y8vkv")
+theme_override_styles/fill = SubResource("StyleBoxFlat_wetyw")
+step = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="CorruptionBar"]
+position = Vector2(9, 11)
+scale = Vector2(0.200317, 0.196411)
+texture = ExtResource("3_spqrm")
+
+[node name="LightBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 150.0
+offset_right = 395.0
+offset_bottom = 177.0
+theme_override_styles/background = SubResource("StyleBoxFlat_i3rkw")
+theme_override_styles/fill = SubResource("StyleBoxFlat_qf3no")
+step = 1.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="LightBar"]
+position = Vector2(7, 9)
+scale = Vector2(0.394886, 0.394886)
+texture = ExtResource("4_vdwpt")
+
+[node name="SwordIcon" type="Sprite2D" parent="."]
+position = Vector2(1150, 340)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("5_omld2")
+
+[node name="SwordSprite" type="Sprite2D" parent="SwordIcon"]
+position = Vector2(125, 0)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("6_xc7vf")
+
+[node name="TorchIcon" type="Sprite2D" parent="."]
+position = Vector2(1150, 400)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("7_ufr8p")
+
+[node name="TorchSprite" type="Sprite2D" parent="TorchIcon"]
+position = Vector2(125, 0)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("8_0a1r1")
+
+[node name="AttackIcon" type="Sprite2D" parent="."]
+position = Vector2(1150, 460)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("9_qv3lj")
+
+[node name="Label" type="Label" parent="AttackIcon"]
+offset_left = 75.0
+offset_top = -18.0
+offset_right = 153.0
+offset_bottom = 17.0
+theme_override_font_sizes/font_size = 25
+text = "Attack
+"
+
+[node name="KeyIcon" type="Sprite2D" parent="."]
+position = Vector2(1176, 672)
+scale = Vector2(3, 3)
+texture = ExtResource("10_ng1il")
+
+[node name="KeyCollected" type="Label" parent="KeyIcon"]
+offset_left = 15.0
+offset_top = -6.5
+offset_right = 65.0
+offset_bottom = 43.5
+scale = Vector2(0.25, 0.25)
+theme_override_font_sizes/font_size = 35
+text = "0
+"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = -190.0
+offset_right = 500.0
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "dialog text"
+label_settings = SubResource("LabelSettings_lfvqg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="Label"]
+wait_time = 2.5
+
+[connection signal="timeout" from="Label/Timer" to="." method="_on_timer_timeout"]

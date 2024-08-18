@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://d005hjcuda4w2"]
+
+[ext_resource type="Script" path="res://Dialog.gd" id="1_gsolv"]
+[ext_resource type="Texture2D" uid="uid://btp86s4rvsa7o" path="res://Xelu_Free_Controller&Key_Prompts/Keyboard & Mouse/Dark/Enter_Alt_Key_Dark.png" id="2_44l23"]
+[ext_resource type="Script" path="res://Script/Dialog Resource.gd" id="2_t14pt"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -303.5
+offset_top = -189.0
+offset_right = 303.5
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0.619608, 1, 1)
+script = ExtResource("1_gsolv")
+dialog_resources = ExtResource("2_t14pt")
+
+[node name="Name" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Dialog" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Timer" type="Timer" parent="ColorRect"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 894.0
+offset_top = 638.0
+offset_right = 994.0
+offset_bottom = 738.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_44l23")

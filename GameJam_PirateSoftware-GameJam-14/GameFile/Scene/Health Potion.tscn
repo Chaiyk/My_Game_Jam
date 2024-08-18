@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=3 uid="uid://dxe5oasrrgn5g"]
+
+[ext_resource type="Script" path="res://Script/Health Potion.gd" id="1_tbj4g"]
+[ext_resource type="Texture2D" uid="uid://ccp8gphufoxa6" path="res://Xelu_Free_Controller&Key_Prompts/Keyboard & Mouse/Dark/E_Key_Dark.png" id="2_nulum"]
+[ext_resource type="Texture2D" uid="uid://cisfn3uxvk0v7" path="res://Sprite/Potion Outline.png" id="3_qtlme"]
+[ext_resource type="Texture2D" uid="uid://cvolur0f25bw2" path="res://Sprite/Potion.png" id="4_dletk"]
+[ext_resource type="PackedScene" uid="uid://bfuowfy1p6otd" path="res://Audio/Sound Effect.tscn" id="5_rlo5a"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_emguo"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_x4f5e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dma3"]
+size = Vector2(24, 22)
+
+[node name="Health Potion" type="Area2D"]
+script = ExtResource("1_tbj4g")
+canInteract = true
+canGlow = true
+interactableName = "Health Potion"
+action = "Use"
+keyTexture = ExtResource("2_nulum")
+
+[node name="Glow Sprite2D" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 1, 0, 1)
+material = SubResource("CanvasItemMaterial_emguo")
+texture = ExtResource("3_qtlme")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_x4f5e")
+texture = ExtResource("4_dletk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8dma3")
+
+[node name="Sound Effect" parent="." instance=ExtResource("5_rlo5a")]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -1,0 +1,442 @@
+[gd_scene load_steps=27 format=3 uid="uid://c3ghfcu3pcddu"]
+
+[ext_resource type="Script" path="res://Script/Level_3.gd" id="1_82yji"]
+[ext_resource type="PackedScene" uid="uid://cg2bv2day6x2" path="res://Scene/Rooms/Room 23.tscn" id="1_sq4vn"]
+[ext_resource type="PackedScene" uid="uid://47ajwdulm2cn" path="res://Scene/Connectors/LeftRight.tscn" id="2_t8sho"]
+[ext_resource type="PackedScene" uid="uid://bhbt4nc0q1ew1" path="res://Scene/Paths/Vertical Corridor.tscn" id="3_fjml5"]
+[ext_resource type="PackedScene" uid="uid://cnubwev3elkcw" path="res://Scene/Connectors/DownLeftRight.tscn" id="4_1kb2l"]
+[ext_resource type="PackedScene" uid="uid://dunrqicjyi1r0" path="res://Scene/Paths/Horizontal Corridor.tscn" id="5_66x4r"]
+[ext_resource type="PackedScene" uid="uid://daujdq08cdthy" path="res://Scene/Connectors/UpDownLeft.tscn" id="7_yl6hs"]
+[ext_resource type="PackedScene" uid="uid://d0x0gvb2fp5ra" path="res://Scene/Rooms/Room 9.tscn" id="8_ewxxb"]
+[ext_resource type="PackedScene" uid="uid://rct8jknd6f4p" path="res://Scene/Connectors/Right.tscn" id="9_tv53w"]
+[ext_resource type="PackedScene" uid="uid://btkws1y1e7tbf" path="res://Scene/Connectors/Down.tscn" id="10_1dumc"]
+[ext_resource type="PackedScene" uid="uid://3l1ahdkko3mq" path="res://Scene/Rooms/Room 24.tscn" id="11_hvecl"]
+[ext_resource type="PackedScene" uid="uid://bskw73ecyt4l4" path="res://Scene/Connectors/UpLeft.tscn" id="12_xvnup"]
+[ext_resource type="PackedScene" uid="uid://bmf46kuw4ya6l" path="res://Scene/Connectors/Left.tscn" id="15_5ir8b"]
+[ext_resource type="PackedScene" uid="uid://pk2thx3d247t" path="res://Scene/Rooms/Room 26.tscn" id="16_br0l8"]
+[ext_resource type="PackedScene" uid="uid://qwggiap31m5" path="res://Scene/Connectors/Up.tscn" id="17_m3a4u"]
+[ext_resource type="PackedScene" uid="uid://bmf233iqiy52n" path="res://Scene/Rooms/Room 4.tscn" id="18_p42wr"]
+[ext_resource type="PackedScene" uid="uid://c6kaps64upcg4" path="res://Scene/Connectors/DownRight.tscn" id="19_labmq"]
+[ext_resource type="PackedScene" uid="uid://ruhak60e44s8" path="res://Scene/Connectors/UpDown.tscn" id="20_sj7ps"]
+[ext_resource type="PackedScene" uid="uid://dha0udhwbg666" path="res://Scene/Rooms/Room 3.tscn" id="21_s8l2l"]
+[ext_resource type="PackedScene" uid="uid://sjfiwr6307q8" path="res://Scene/Rooms/Exit Room Left.tscn" id="22_srerh"]
+[ext_resource type="PackedScene" uid="uid://dmqils2h54pms" path="res://Scene/Enemy-Projectile.tscn" id="23_13lj5"]
+[ext_resource type="PackedScene" uid="uid://b75e011ulhukf" path="res://Scene/Enemy.tscn" id="24_h2fbl"]
+[ext_resource type="PackedScene" uid="uid://dxe5oasrrgn5g" path="res://Scene/Health Potion.tscn" id="25_misb7"]
+[ext_resource type="PackedScene" uid="uid://ia543w2lgmtc" path="res://Scene/Door Area2D.tscn" id="27_e210q"]
+[ext_resource type="PackedScene" path="res://Scene/Torch.tscn" id="28_rqxgy"]
+[ext_resource type="PackedScene" uid="uid://dcfcs1csye6na" path="res://Scene/Light Area 2D.tscn" id="29_n6eop"]
+
+[node name="Level3" type="Node2D"]
+position = Vector2(22, -37)
+script = ExtResource("1_82yji")
+
+[node name="Room 12" parent="." instance=ExtResource("1_sq4vn")]
+position = Vector2(-22, 37)
+
+[node name="LeftRight" parent="." instance=ExtResource("2_t8sho")]
+position = Vector2(-374, 149)
+
+[node name="Vertical Corridor10" parent="." instance=ExtResource("3_fjml5")]
+position = Vector2(-822, -75)
+
+[node name="Vertical Corridor" parent="." instance=ExtResource("3_fjml5")]
+position = Vector2(218, -74)
+
+[node name="DownLeftRight" parent="." instance=ExtResource("4_1kb2l")]
+position = Vector2(90, -426)
+
+[node name="Horizontal Corridor" parent="." instance=ExtResource("5_66x4r")]
+position = Vector2(442, -314)
+
+[node name="Horizontal Corridor2" parent="." instance=ExtResource("5_66x4r")]
+position = Vector2(-22, -314)
+
+[node name="Horizontal Corridor7" parent="." instance=ExtResource("5_66x4r")]
+position = Vector2(554, -314)
+
+[node name="Horizontal Corridor8" parent="." instance=ExtResource("5_66x4r")]
+position = Vector2(-486, 261)
+
+[node name="Vertical Corridor2" parent="." instance=ExtResource("3_fjml5")]
+position = Vector2(218, 613)
+
+[node name="Vertical Corridor3" parent="." instance=ExtResource("3_fjml5")]
+position = Vector2(218, 1077)
+
+[node name="UpDownLeft" parent="." instance=ExtResource("7_yl6hs")]
+position = Vector2(90, 1189)
+
+[node name="Horizontal Corridor4" parent="." instance=ExtResource("5_66x4r")]
+position = Vector2(-709, 1285)
+
+[node name="Horizontal Corridor5" parent="." instance=ExtResource("5_66x4r")]
+position = Vector2(-6, 1861)
+
+[node name="Horizontal Corridor3" parent="." instance=ExtResource("5_66x4r")]
+position = Vector2(-22, 1301)
+
+[node name="Room 9" parent="." instance=ExtResource("8_ewxxb")]
+position = Vector2(-598, 1061)
+
+[node name="Right" parent="." instance=ExtResource("9_tv53w")]
+position = Vector2(-1045, 1173)
+
+[node name="Down" parent="." instance=ExtResource("10_1dumc")]
+position = Vector2(-470, 597)
+
+[node name="Vertical Corridor4" parent="." instance=ExtResource("3_fjml5")]
+position = Vector2(-358, 949)
+
+[node name="Vertical Corridor5" parent="." instance=ExtResource("3_fjml5")]
+position = Vector2(218, 1541)
+
+[node name="Vertical Corridor6" parent="." instance=ExtResource("3_fjml5")]
+position = Vector2(218, 1652)
+
+[node name="Room 24" parent="." instance=ExtResource("11_hvecl")]
+position = Vector2(-582, 1637)
+
+[node name="UpLeft" parent="." instance=ExtResource("12_xvnup")]
+position = Vector2(90, 1749)
+
+[node name="LeftRight2" parent="." instance=ExtResource("2_t8sho")]
+position = Vector2(1129, 149)
+
+[node name="Left" parent="." instance=ExtResource("15_5ir8b")]
+position = Vector2(1481, 149)
+
+[node name="DownLeftRight2" parent="." instance=ExtResource("4_1kb2l")]
+position = Vector2(666, -426)
+
+[node name="Vertical Corridor8" parent="." instance=ExtResource("3_fjml5")]
+position = Vector2(1258, -650)
+
+[node name="Vertical Corridor7" parent="." instance=ExtResource("3_fjml5")]
+position = Vector2(794, -74)
+
+[node name="Room 25" parent="." instance=ExtResource("11_hvecl")]
+position = Vector2(1594, -538)
+scale = Vector2(-1, 1)
+
+[node name="Down2" parent="." instance=ExtResource("10_1dumc")]
+position = Vector2(1146, -1002)
+
+[node name="Room 26" parent="." instance=ExtResource("16_br0l8")]
+position = Vector2(-1046, 37)
+
+[node name="Up" parent="." instance=ExtResource("17_m3a4u")]
+position = Vector2(-934, 613)
+
+[node name="Room 4" parent="." instance=ExtResource("18_p42wr")]
+position = Vector2(-598, -538)
+
+[node name="DownRight" parent="." instance=ExtResource("19_labmq")]
+position = Vector2(-934, -426)
+
+[node name="Vertical Corridor9" parent="." instance=ExtResource("3_fjml5")]
+position = Vector2(-358, -650)
+
+[node name="UpDown" parent="." instance=ExtResource("20_sj7ps")]
+position = Vector2(-470, -1002)
+
+[node name="Room 3" parent="." instance=ExtResource("21_s8l2l")]
+position = Vector2(-598, -1578)
+
+[node name="Exit Left" parent="." instance=ExtResource("22_srerh")]
+position = Vector2(-1047, -1466)
+
+[node name="Horizontal Corridor9" parent="." instance=ExtResource("5_66x4r")]
+position = Vector2(-711, -1354)
+
+[node name="Left2" parent="." instance=ExtResource("15_5ir8b")]
+position = Vector2(-22, -1466)
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(265, 323)
+scale = Vector2(-0.246838, -1.06728)
+
+[node name="KeySpawn6" type="Marker2D" parent="."]
+position = Vector2(154, -1289)
+
+[node name="KeySpawn5" type="Marker2D" parent="."]
+position = Vector2(1304, -845)
+
+[node name="KeySpawn4" type="Marker2D" parent="."]
+position = Vector2(1656, 324)
+
+[node name="KeySpawn3" type="Marker2D" parent="."]
+position = Vector2(-771, 799)
+
+[node name="KeySpawn2" type="Marker2D" parent="."]
+position = Vector2(-310, 755)
+
+[node name="KeySpawn" type="Marker2D" parent="."]
+position = Vector2(-885, 1349)
+
+[node name="EnemyProj" parent="." instance=ExtResource("23_13lj5")]
+position = Vector2(-291, 1780)
+
+[node name="EnemyProj2" parent="." instance=ExtResource("23_13lj5")]
+position = Vector2(-438, 2007)
+
+[node name="EnemyProj3" parent="." instance=ExtResource("23_13lj5")]
+position = Vector2(-189, 1973)
+
+[node name="Enemy" parent="." instance=ExtResource("24_h2fbl")]
+position = Vector2(-921, 297)
+
+[node name="Enemy2" parent="." instance=ExtResource("24_h2fbl")]
+position = Vector2(-864, 476)
+
+[node name="Enemy3" parent="." instance=ExtResource("24_h2fbl")]
+position = Vector2(-620, 295)
+
+[node name="Enemy4" parent="." instance=ExtResource("24_h2fbl")]
+position = Vector2(-681, 475)
+
+[node name="Enemy5" parent="." instance=ExtResource("24_h2fbl")]
+position = Vector2(-765, 181)
+
+[node name="EnemyProj4" parent="." instance=ExtResource("23_13lj5")]
+position = Vector2(807, 257)
+
+[node name="Enemy6" parent="." instance=ExtResource("24_h2fbl")]
+position = Vector2(735, 431)
+
+[node name="Enemy7" parent="." instance=ExtResource("24_h2fbl")]
+position = Vector2(1008, 334)
+
+[node name="EnemyProj5" parent="." instance=ExtResource("23_13lj5")]
+position = Vector2(-462, -254)
+
+[node name="EnemyProj6" parent="." instance=ExtResource("23_13lj5")]
+position = Vector2(-181, -250)
+
+[node name="EnemyProj7" parent="." instance=ExtResource("23_13lj5")]
+position = Vector2(1224, -252)
+
+[node name="Enemy8" parent="." instance=ExtResource("24_h2fbl")]
+position = Vector2(1309, -454)
+
+[node name="Enemy9" parent="." instance=ExtResource("24_h2fbl")]
+position = Vector2(1373, -124)
+
+[node name="Enemy10" parent="." instance=ExtResource("24_h2fbl")]
+position = Vector2(1452, -314)
+
+[node name="Enemy11" parent="." instance=ExtResource("24_h2fbl")]
+position = Vector2(-405, -1117)
+
+[node name="Enemy12" parent="." instance=ExtResource("24_h2fbl")]
+position = Vector2(-225, -1110)
+
+[node name="Enemy13" parent="." instance=ExtResource("24_h2fbl")]
+position = Vector2(-315, -1116)
+
+[node name="Enemy14" parent="." instance=ExtResource("24_h2fbl")]
+position = Vector2(-381, -1238)
+
+[node name="Enemy15" parent="." instance=ExtResource("24_h2fbl")]
+position = Vector2(-255, -1236)
+
+[node name="Health Potion" parent="." instance=ExtResource("25_misb7")]
+position = Vector2(-198, 324)
+
+[node name="Health Potion2" parent="." instance=ExtResource("25_misb7")]
+position = Vector2(-311, -827)
+
+[node name="Health Potion3" parent="." instance=ExtResource("25_misb7")]
+position = Vector2(267, 1366)
+
+[node name="Health Potion4" parent="." instance=ExtResource("25_misb7")]
+position = Vector2(1306, 324)
+
+[node name="DoorArea2d" parent="." instance=ExtResource("27_e210q")]
+position = Vector2(-1043, -1290)
+required_keys = 3
+
+[node name="Torch AnimatedSprite2D2" parent="." instance=ExtResource("28_rqxgy")]
+position = Vector2(289, 186)
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D2" instance=ExtResource("29_n6eop")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Torch AnimatedSprite2D3" parent="." instance=ExtResource("28_rqxgy")]
+position = Vector2(243, 433)
+flip_h = false
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D3" instance=ExtResource("29_n6eop")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Torch AnimatedSprite2D4" parent="." instance=ExtResource("28_rqxgy")]
+position = Vector2(595, 390)
+flip_h = false
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D4" instance=ExtResource("29_n6eop")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Torch AnimatedSprite2D5" parent="." instance=ExtResource("28_rqxgy")]
+position = Vector2(131, -182)
+flip_h = false
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D5" instance=ExtResource("29_n6eop")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Torch AnimatedSprite2D6" parent="." instance=ExtResource("28_rqxgy")]
+position = Vector2(-557, -134)
+flip_h = false
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D6" instance=ExtResource("29_n6eop")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Torch AnimatedSprite2D7" parent="." instance=ExtResource("28_rqxgy")]
+position = Vector2(-62, -381)
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D7" instance=ExtResource("29_n6eop")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Torch AnimatedSprite2D8" parent="." instance=ExtResource("28_rqxgy")]
+position = Vector2(-287, -584)
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D8" instance=ExtResource("29_n6eop")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Torch AnimatedSprite2D9" parent="." instance=ExtResource("28_rqxgy")]
+position = Vector2(-63, -1218)
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D9" instance=ExtResource("29_n6eop")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Torch AnimatedSprite2D10" parent="." instance=ExtResource("28_rqxgy")]
+position = Vector2(-751, -1231)
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D10" instance=ExtResource("29_n6eop")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Torch AnimatedSprite2D11" parent="." instance=ExtResource("28_rqxgy")]
+position = Vector2(-557, -1455)
+flip_h = false
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D11" instance=ExtResource("29_n6eop")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Torch AnimatedSprite2D12" parent="." instance=ExtResource("28_rqxgy")]
+position = Vector2(-287, -1012)
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D12" instance=ExtResource("29_n6eop")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Torch AnimatedSprite2D13" parent="." instance=ExtResource("28_rqxgy")]
+position = Vector2(-750, -37)
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D13" instance=ExtResource("29_n6eop")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Torch AnimatedSprite2D14" parent="." instance=ExtResource("28_rqxgy")]
+position = Vector2(-798, 602)
+flip_h = false
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D14" instance=ExtResource("29_n6eop")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Torch AnimatedSprite2D15" parent="." instance=ExtResource("28_rqxgy")]
+position = Vector2(-62, 252)
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D15" instance=ExtResource("29_n6eop")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Torch AnimatedSprite2D16" parent="." instance=ExtResource("28_rqxgy")]
+position = Vector2(290, 1088)
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D16" instance=ExtResource("29_n6eop")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Torch AnimatedSprite2D17" parent="." instance=ExtResource("28_rqxgy")]
+position = Vector2(-61, 1287)
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D17" instance=ExtResource("29_n6eop")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Torch AnimatedSprite2D18" parent="." instance=ExtResource("28_rqxgy")]
+position = Vector2(-286, 1019)
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D18" instance=ExtResource("29_n6eop")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Torch AnimatedSprite2D19" parent="." instance=ExtResource("28_rqxgy")]
+position = Vector2(-749, 1388)
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D19" instance=ExtResource("29_n6eop")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Torch AnimatedSprite2D20" parent="." instance=ExtResource("28_rqxgy")]
+position = Vector2(-558, 1408)
+flip_h = false
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D20" instance=ExtResource("29_n6eop")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Torch AnimatedSprite2D21" parent="." instance=ExtResource("28_rqxgy")]
+position = Vector2(243, 1545)
+flip_h = false
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D21" instance=ExtResource("29_n6eop")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Torch AnimatedSprite2D22" parent="." instance=ExtResource("28_rqxgy")]
+position = Vector2(131, 1976)
+flip_h = false
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D22" instance=ExtResource("29_n6eop")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Torch AnimatedSprite2D23" parent="." instance=ExtResource("28_rqxgy")]
+position = Vector2(-270, 1635)
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D23" instance=ExtResource("29_n6eop")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Torch AnimatedSprite2D24" parent="." instance=ExtResource("28_rqxgy")]
+position = Vector2(-46, 1986)
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D24" instance=ExtResource("29_n6eop")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Torch AnimatedSprite2D25" parent="." instance=ExtResource("28_rqxgy")]
+position = Vector2(-62, 1569)
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D25" instance=ExtResource("29_n6eop")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Torch AnimatedSprite2D26" parent="." instance=ExtResource("28_rqxgy")]
+position = Vector2(978, -319)
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D26" instance=ExtResource("29_n6eop")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Torch AnimatedSprite2D27" parent="." instance=ExtResource("28_rqxgy")]
+position = Vector2(1091, 396)
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D27" instance=ExtResource("29_n6eop")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Torch AnimatedSprite2D28" parent="." instance=ExtResource("28_rqxgy")]
+position = Vector2(1058, -145)
+flip_h = false
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D28" instance=ExtResource("29_n6eop")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Torch AnimatedSprite2D29" parent="." instance=ExtResource("28_rqxgy")]
+position = Vector2(1282, -557)
+flip_h = false
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D29" instance=ExtResource("29_n6eop")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Room 5" parent="." instance=ExtResource("18_p42wr")]
+position = Vector2(554, 37)
+
+[node name="UpDown2" parent="." instance=ExtResource("20_sj7ps")]
+position = Vector2(106, 724)

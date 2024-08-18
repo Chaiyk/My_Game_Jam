@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcfcs1csye6na"]
+
+[ext_resource type="Script" path="res://Script/Light Area 2D.gd" id="1_mnm7f"]
+[ext_resource type="Texture2D" uid="uid://bgtaywdivqof0" path="res://Sprite/Light.png" id="2_ad7w8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o35a0"]
+
+[node name="Light Area2D" type="Area2D"]
+script = ExtResource("1_mnm7f")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.403922, 0.403922, 0.403922, 1)
+energy = 0.6
+blend_mode = 2
+texture = ExtResource("2_ad7w8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(12.7, 12.7)
+shape = SubResource("CircleShape2D_o35a0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

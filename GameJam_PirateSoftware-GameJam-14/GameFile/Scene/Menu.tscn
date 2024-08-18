@@ -1,0 +1,111 @@
+[gd_scene load_steps=7 format=3 uid="uid://cr1jdmmp1ook8"]
+
+[ext_resource type="Script" path="res://Script/Menu.gd" id="1_cmex5"]
+[ext_resource type="StyleBox" uid="uid://7e2pgi2dys2s" path="res://ButtonStyle/NormalButton.tres" id="2_4rtq8"]
+[ext_resource type="Texture2D" uid="uid://hobonmltautl" path="res://Sprite/title.png" id="2_7d76w"]
+[ext_resource type="StyleBox" uid="uid://b3ver1lqr74y8" path="res://ButtonStyle/ButtonHover.tres" id="3_iuphg"]
+[ext_resource type="StyleBox" uid="uid://n54eek8w4ulu" path="res://ButtonStyle/ButtonPressed.tres" id="4_16m3h"]
+[ext_resource type="StyleBox" uid="uid://cgta8mkgk78qq" path="res://ButtonStyle/ButtonFocus.tres" id="5_aokll"]
+
+[node name="Menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cmex5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0, 0.156863, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.375
+anchor_top = 0.535
+anchor_right = 0.625
+anchor_bottom = 0.946
+offset_left = -3.05176e-05
+offset_top = -0.200012
+offset_bottom = -0.120056
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="startButton" type="Button" parent="ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(82, 59)
+layout_direction = 1
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = ExtResource("2_4rtq8")
+theme_override_styles/hover = ExtResource("3_iuphg")
+theme_override_styles/pressed = ExtResource("4_16m3h")
+theme_override_styles/focus = ExtResource("5_aokll")
+text = "Start"
+
+[node name="optionsButton" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = ExtResource("2_4rtq8")
+theme_override_styles/hover = ExtResource("3_iuphg")
+theme_override_styles/pressed = ExtResource("4_16m3h")
+theme_override_styles/focus = ExtResource("5_aokll")
+text = "Options"
+
+[node name="creditsButton" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = ExtResource("2_4rtq8")
+theme_override_styles/hover = ExtResource("3_iuphg")
+theme_override_styles/pressed = ExtResource("4_16m3h")
+theme_override_styles/focus = ExtResource("5_aokll")
+text = "Credits"
+
+[node name="quitButton" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = ExtResource("2_4rtq8")
+theme_override_styles/hover = ExtResource("3_iuphg")
+theme_override_styles/pressed = ExtResource("4_16m3h")
+theme_override_styles/focus = ExtResource("5_aokll")
+text = "Quit"
+
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect"]
+position = Vector2(640, 216)
+scale = Vector2(0.413493, 0.415035)
+texture = ExtResource("2_7d76w")
+
+[node name="Version" type="Label" parent="ColorRect"]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.935
+anchor_top = 0.942
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.199951
+offset_top = -0.240051
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "v1.0.0"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/startButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/optionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/creditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/quitButton" to="." method="_on_quit_button_pressed"]

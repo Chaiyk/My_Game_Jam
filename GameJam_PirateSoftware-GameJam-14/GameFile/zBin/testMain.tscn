@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://dsqskraoo6ra3"]
+
+[ext_resource type="Script" path="res://Script/testMain.gd" id="1_e2jtc"]
+[ext_resource type="PackedScene" uid="uid://ni4wyu4lhydd" path="res://Scene/level1.tscn" id="2_cxjr0"]
+[ext_resource type="PackedScene" uid="uid://bngbxcqicomc0" path="res://Scene/Player.tscn" id="3_o04ey"]
+[ext_resource type="PackedScene" uid="uid://c5yxt8ox0vqne" path="res://Scene/HUD.tscn" id="4_jt3vi"]
+[ext_resource type="PackedScene" uid="uid://b3nl6qbyiapmc" path="res://Tutorial.tscn" id="5_s62p3"]
+[ext_resource type="PackedScene" uid="uid://b75e011ulhukf" path="res://Scene/Enemy.tscn" id="8_ya4ii"]
+
+[node name="Main" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_e2jtc")
+
+[node name="Player" parent="." instance=ExtResource("3_o04ey")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.270588, 0.270588, 0.270588, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hud" parent="CanvasLayer" instance=ExtResource("4_jt3vi")]
+
+[node name="Level1" parent="." instance=ExtResource("2_cxjr0")]
+position = Vector2(40, 489)
+
+[node name="Tutorial" parent="." instance=ExtResource("5_s62p3")]
+position = Vector2(3688, 5250)
+
+[node name="Enemy" parent="." instance=ExtResource("8_ya4ii")]
+position = Vector2(160, -8)

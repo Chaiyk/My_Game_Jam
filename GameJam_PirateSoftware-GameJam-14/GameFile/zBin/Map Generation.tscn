@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy530jidms117"]
+
+[ext_resource type="Script" path="res://zBin/Map Generation.gd" id="1_h3mh4"]
+
+[node name="Map Generation" type="Node2D"]
+script = ExtResource("1_h3mh4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1347, 1177)
+zoom = Vector2(0.24, 0.24)

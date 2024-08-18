@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://car3nslchtg5x"]
+
+[ext_resource type="PackedScene" uid="uid://c2s30i2jaefi5" path="res://Scene/Rooms/Room 12.tscn" id="1_awpjj"]
+[ext_resource type="PackedScene" uid="uid://dyvofj4b0smm5" path="res://Scene/Connectors/All.tscn" id="2_pamnd"]
+[ext_resource type="PackedScene" uid="uid://bhbt4nc0q1ew1" path="res://Scene/Paths/Vertical Corridor.tscn" id="3_28065"]
+[ext_resource type="PackedScene" uid="uid://dunrqicjyi1r0" path="res://Scene/Paths/Horizontal Corridor.tscn" id="4_fgtb1"]
+[ext_resource type="PackedScene" uid="uid://cd8r0g47jfvle" path="res://Scene/Connectors/UpDownRight.tscn" id="5_aqasq"]
+[ext_resource type="PackedScene" uid="uid://bskw73ecyt4l4" path="res://Scene/Connectors/UpLeft.tscn" id="6_4phu1"]
+[ext_resource type="PackedScene" uid="uid://dyih3l0qecnj0" path="res://Scene/Rooms/Room 22.tscn" id="7_ws4up"]
+[ext_resource type="PackedScene" uid="uid://cnubwev3elkcw" path="res://Scene/Connectors/DownLeftRight.tscn" id="8_12rvr"]
+
+[node name="MenuRoom" type="Node2D"]
+
+[node name="Room 12" parent="." instance=ExtResource("1_awpjj")]
+position = Vector2(352, 575)
+
+[node name="All" parent="." instance=ExtResource("2_pamnd")]
+position = Vector2(0, 112)
+
+[node name="Vertical Corridor" parent="." instance=ExtResource("3_28065")]
+position = Vector2(128, 0)
+
+[node name="Horizontal Corridor" parent="." instance=ExtResource("4_fgtb1")]
+position = Vector2(352, 224)
+
+[node name="Vertical Corridor2" parent="." instance=ExtResource("3_28065")]
+position = Vector2(592, 463)
+
+[node name="Horizontal Corridor2" parent="." instance=ExtResource("4_fgtb1")]
+position = Vector2(-112, 224)
+
+[node name="Vertical Corridor3" parent="." instance=ExtResource("3_28065")]
+position = Vector2(128, 464)
+
+[node name="Vertical Corridor4" parent="." instance=ExtResource("3_28065")]
+position = Vector2(128, 576)
+
+[node name="UpDownRight" parent="." instance=ExtResource("5_aqasq")]
+position = Vector2(16, 688)
+
+[node name="UpLeft" parent="." instance=ExtResource("6_4phu1")]
+position = Vector2(0, 1040)
+
+[node name="Room 22" parent="." instance=ExtResource("7_ws4up")]
+position = Vector2(816, -1)
+
+[node name="DownLeftRight" parent="." instance=ExtResource("8_12rvr")]
+position = Vector2(464, 111)
+
+[node name="Vertical Corridor5" parent="." instance=ExtResource("3_28065")]
+position = Vector2(1056, 575)
+
+[node name="Vertical Corridor6" parent="." instance=ExtResource("3_28065")]
+position = Vector2(1056, 687)

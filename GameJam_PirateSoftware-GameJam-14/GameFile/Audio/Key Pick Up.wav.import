@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://uy25cvtv2nat"
+path="res://.godot/imported/Key Pick Up.wav-56ad9b49df461cb01559f4ea3669c24a.sample"
+
+[deps]
+
+source_file="res://Audio/Key Pick Up.wav"
+dest_files=["res://.godot/imported/Key Pick Up.wav-56ad9b49df461cb01559f4ea3669c24a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

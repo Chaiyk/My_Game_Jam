@@ -1,0 +1,139 @@
+[gd_scene load_steps=18 format=3 uid="uid://b75e011ulhukf"]
+
+[ext_resource type="Script" path="res://Script/Enemy.gd" id="1_oymyu"]
+[ext_resource type="Texture2D" uid="uid://dk7sr5ekk5cy0" path="res://Sprite/Placeholder_Skele Sprite Sheet.png" id="2_jl0f5"]
+[ext_resource type="PackedScene" uid="uid://bfuowfy1p6otd" path="res://Audio/Sound Effect.tscn" id="3_b7fjm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6qo5"]
+atlas = ExtResource("2_jl0f5")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ksun"]
+atlas = ExtResource("2_jl0f5")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydgli"]
+atlas = ExtResource("2_jl0f5")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgthq"]
+atlas = ExtResource("2_jl0f5")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0q3yh"]
+atlas = ExtResource("2_jl0f5")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntmig"]
+atlas = ExtResource("2_jl0f5")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhci7"]
+atlas = ExtResource("2_jl0f5")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ohdu"]
+atlas = ExtResource("2_jl0f5")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yxhg"]
+atlas = ExtResource("2_jl0f5")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p6oy0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6qo5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ksun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydgli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgthq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0q3yh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntmig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhci7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ohdu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4yxhg")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rsxc3"]
+size = Vector2(14, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqksy"]
+size = Vector2(16, 13)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bsoce"]
+radius = 94.4299
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_38ryj"]
+size = Vector2(16, 45)
+
+[node name="Enemy" type="CharacterBody2D" groups=["Hit"]]
+z_index = 1
+position = Vector2(-2, -38)
+script = ExtResource("1_oymyu")
+SPEED = 50
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, 6)
+sprite_frames = SubResource("SpriteFrames_p6oy0")
+animation = &"Walk"
+frame_progress = 0.600221
+
+[node name="Attack_Zone" type="Area2D" parent="AnimatedSprite2D"]
+position = Vector2(0, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Attack_Zone"]
+position = Vector2(-14, 5.5)
+shape = SubResource("RectangleShape2D_rsxc3")
+
+[node name="TTS" type="Timer" parent="AnimatedSprite2D/Attack_Zone"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 31.5)
+shape = SubResource("RectangleShape2D_eqksy")
+
+[node name="Detection_Zone" type="Area2D" parent="."]
+position = Vector2(2, 5)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection_Zone"]
+shape = SubResource("CircleShape2D_bsoce")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="Hitarea" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(3, 15.5)
+shape = SubResource("RectangleShape2D_38ryj")
+
+[node name="ChangeColour" type="Timer" parent="."]
+wait_time = 0.25
+
+[node name="Sound Effect" parent="." instance=ExtResource("3_b7fjm")]
+
+[connection signal="body_entered" from="AnimatedSprite2D/Attack_Zone" to="." method="_on_attack_zone_body_entered"]
+[connection signal="body_exited" from="AnimatedSprite2D/Attack_Zone" to="." method="_on_attack_zone_body_exited"]
+[connection signal="timeout" from="AnimatedSprite2D/Attack_Zone/TTS" to="." method="_on_tts_timeout"]
+[connection signal="body_entered" from="Detection_Zone" to="." method="_on_detection_zone_body_entered"]
+[connection signal="body_exited" from="Detection_Zone" to="." method="_on_detection_zone_body_exited"]
+[connection signal="timeout" from="ChangeColour" to="." method="_on_change_colour_timeout"]

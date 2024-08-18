@@ -1,0 +1,124 @@
+[gd_scene load_steps=16 format=3 uid="uid://b46pftotapgft"]
+
+[ext_resource type="PackedScene" uid="uid://crlmsim3tit04" path="res://Scene/Rooms/Room 2.tscn" id="1_7u6qj"]
+[ext_resource type="Script" path="res://Script/FinalTutorial.gd" id="1_jgmuy"]
+[ext_resource type="PackedScene" uid="uid://cki3gyqtcxyvx" path="res://Scene/Rooms/Room 6.tscn" id="2_3sfd6"]
+[ext_resource type="PackedScene" uid="uid://bx0yat8bigmap" path="res://Scene/Rooms/Room 7.tscn" id="3_2hcns"]
+[ext_resource type="PackedScene" uid="uid://xe177igpep1l" path="res://Scene/Connectors/UpRight.tscn" id="4_5dain"]
+[ext_resource type="PackedScene" uid="uid://b75e011ulhukf" path="res://Scene/Enemy.tscn" id="4_16mtg"]
+[ext_resource type="PackedScene" uid="uid://rct8jknd6f4p" path="res://Scene/Connectors/Right.tscn" id="5_f20wb"]
+[ext_resource type="PackedScene" uid="uid://dmqils2h54pms" path="res://Scene/Enemy-Projectile.tscn" id="5_pheq1"]
+[ext_resource type="PackedScene" uid="uid://btkws1y1e7tbf" path="res://Scene/Connectors/Down.tscn" id="6_0ekh2"]
+[ext_resource type="PackedScene" uid="uid://8lr56s8nmyfr" path="res://Scene/Rooms/Exit Room Up.tscn" id="7_ia2hl"]
+[ext_resource type="PackedScene" uid="uid://bmf46kuw4ya6l" path="res://Scene/Connectors/Left.tscn" id="10_ekgdd"]
+[ext_resource type="PackedScene" uid="uid://cakhek2b4ubi3" path="res://Scene/Key.tscn" id="11_fhdgg"]
+[ext_resource type="PackedScene" path="res://Scene/Torch.tscn" id="14_ww46t"]
+[ext_resource type="PackedScene" uid="uid://ia543w2lgmtc" path="res://Scene/Door Area2D.tscn" id="14_yy54j"]
+[ext_resource type="PackedScene" uid="uid://dcfcs1csye6na" path="res://Scene/Light Area 2D.tscn" id="15_hd64a"]
+
+[node name="Level" type="Node2D"]
+position = Vector2(16, 16)
+script = ExtResource("1_jgmuy")
+key = ExtResource("11_fhdgg")
+
+[node name="Room 2" parent="." instance=ExtResource("1_7u6qj")]
+position = Vector2(319, -130)
+
+[node name="Room 6" parent="." instance=ExtResource("2_3sfd6")]
+position = Vector2(894, -130)
+
+[node name="Room 7" parent="." instance=ExtResource("3_2hcns")]
+position = Vector2(1470, -130)
+
+[node name="Enemy2" parent="." instance=ExtResource("4_16mtg")]
+position = Vector2(1296, 251)
+
+[node name="Enemy" parent="." instance=ExtResource("4_16mtg")]
+position = Vector2(1045, 67)
+
+[node name="EnemyProj2" parent="." instance=ExtResource("5_pheq1")]
+position = Vector2(603, -319)
+
+[node name="EnemyProj3" parent="." instance=ExtResource("5_pheq1")]
+position = Vector2(606, 616)
+
+[node name="EnemyProj" parent="." instance=ExtResource("5_pheq1")]
+position = Vector2(1192, 136)
+
+[node name="UpRight" parent="." instance=ExtResource("4_5dain")]
+position = Vector2(447, 446)
+
+[node name="Right" parent="." instance=ExtResource("5_f20wb")]
+position = Vector2(-16, -18)
+
+[node name="Down" parent="." instance=ExtResource("6_0ekh2")]
+position = Vector2(1598, -482)
+
+[node name="Left" parent="." instance=ExtResource("10_ekgdd")]
+position = Vector2(782, 446)
+
+[node name="KeySpawn" type="Marker2D" parent="."]
+position = Vector2(959, 621)
+
+[node name="KeySpawn2" type="Marker2D" parent="."]
+position = Vector2(1756, -323)
+
+[node name="DoorArea2d" parent="." instance=ExtResource("14_yy54j")]
+position = Vector2(607, -465)
+required_keys = 1
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(129, 158)
+
+[node name="Exit2" parent="." instance=ExtResource("7_ia2hl")]
+position = Vector2(447, -482)
+
+[node name="Torch AnimatedSprite2D" parent="." instance=ExtResource("14_ww46t")]
+position = Vector2(360, 214)
+flip_h = false
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D" instance=ExtResource("15_hd64a")]
+scale = Vector2(0.75, 0.75)
+
+[node name="Torch AnimatedSprite2D2" parent="." instance=ExtResource("14_ww46t")]
+position = Vector2(854, 198)
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D2" instance=ExtResource("15_hd64a")]
+scale = Vector2(0.75, 0.75)
+
+[node name="Torch AnimatedSprite2D3" parent="." instance=ExtResource("14_ww46t")]
+position = Vector2(742, 670)
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D3" instance=ExtResource("15_hd64a")]
+scale = Vector2(0.75, 0.75)
+
+[node name="Torch AnimatedSprite2D4" parent="." instance=ExtResource("14_ww46t")]
+position = Vector2(1718, 131)
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D4" instance=ExtResource("15_hd64a")]
+scale = Vector2(0.75, 0.75)
+
+[node name="Torch AnimatedSprite2D5" parent="." instance=ExtResource("14_ww46t")]
+position = Vector2(1893, -285)
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D5" instance=ExtResource("15_hd64a")]
+scale = Vector2(0.75, 0.75)
+
+[node name="Torch AnimatedSprite2D6" parent="." instance=ExtResource("14_ww46t")]
+position = Vector2(472, -259)
+flip_h = false
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D6" instance=ExtResource("15_hd64a")]
+scale = Vector2(0.75, 0.75)
+
+[node name="Torch AnimatedSprite2D7" parent="." instance=ExtResource("14_ww46t")]
+position = Vector2(1429, 18)
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D7" instance=ExtResource("15_hd64a")]
+scale = Vector2(0.75, 0.75)
+
+[node name="Torch AnimatedSprite2D8" parent="." instance=ExtResource("14_ww46t")]
+position = Vector2(1430, 309)
+
+[node name="Light Area2D" parent="Torch AnimatedSprite2D8" instance=ExtResource("15_hd64a")]
+scale = Vector2(0.75, 0.75)

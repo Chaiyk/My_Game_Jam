@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://upyut8iaolwi"]
+
+[ext_resource type="Script" path="res://Script/Credits.gd" id="1_ewy36"]
+[ext_resource type="StyleBox" uid="uid://7e2pgi2dys2s" path="res://ButtonStyle/NormalButton.tres" id="2_fuo8e"]
+[ext_resource type="StyleBox" uid="uid://b3ver1lqr74y8" path="res://ButtonStyle/ButtonHover.tres" id="3_1bsdd"]
+[ext_resource type="StyleBox" uid="uid://n54eek8w4ulu" path="res://ButtonStyle/ButtonPressed.tres" id="4_8x8d5"]
+[ext_resource type="StyleBox" uid="uid://cgta8mkgk78qq" path="res://ButtonStyle/ButtonFocus.tres" id="5_65uu5"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ewy36")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0, 0.156863, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -228.0
+offset_top = 140.0
+offset_right = 228.0
+offset_bottom = 204.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "[center]Built and Created by:[/center]"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -330.0
+offset_top = -32.0
+offset_right = 330.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 35
+text = "Kengi, Chips, Sinkrity, Steven, 4Nothing"
+
+[node name="BackButton" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -125.0
+offset_right = 160.0
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = ExtResource("2_fuo8e")
+theme_override_styles/hover = ExtResource("3_1bsdd")
+theme_override_styles/pressed = ExtResource("4_8x8d5")
+theme_override_styles/focus = ExtResource("5_65uu5")
+text = "Back"
+
+[connection signal="pressed" from="ColorRect/BackButton" to="." method="_on_back_button_pressed"]

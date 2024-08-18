@@ -1,0 +1,108 @@
+[gd_scene load_steps=16 format=3 uid="uid://beivjquv64f1a"]
+
+[ext_resource type="Texture2D" uid="uid://brn2o3nu77rnn" path="res://Sprite/Environment Torch Ground.png" id="1_10auv"]
+[ext_resource type="Texture2D" uid="uid://c2f5p3vqo355p" path="res://Sprite/Environment Torch Wall.png" id="2_r345u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6ti3"]
+atlas = ExtResource("1_10auv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpf5u"]
+atlas = ExtResource("1_10auv")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnkcq"]
+atlas = ExtResource("1_10auv")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36tfu"]
+atlas = ExtResource("1_10auv")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1a4e3"]
+atlas = ExtResource("1_10auv")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2od2q"]
+atlas = ExtResource("1_10auv")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnxe7"]
+atlas = ExtResource("2_r345u")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xj5m"]
+atlas = ExtResource("2_r345u")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ft3go"]
+atlas = ExtResource("2_r345u")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbpjs"]
+atlas = ExtResource("2_r345u")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_it5cp"]
+atlas = ExtResource("2_r345u")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvu1v"]
+atlas = ExtResource("2_r345u")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_koy3d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6ti3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpf5u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnkcq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36tfu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1a4e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2od2q")
+}],
+"loop": true,
+"name": &"Ground",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnxe7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xj5m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ft3go")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbpjs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_it5cp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvu1v")
+}],
+"loop": true,
+"name": &"Wall",
+"speed": 5.0
+}]
+
+[node name="Torch AnimatedSprite2D" type="AnimatedSprite2D"]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_koy3d")
+animation = &"Wall"
+autoplay = "Wall"
+flip_h = true

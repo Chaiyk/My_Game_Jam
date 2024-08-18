@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://85fab63bvky8"]
+
+[ext_resource type="Texture2D" uid="uid://ggiqy4qld6rt" path="res://arrow.png" id="1_3mv21"]
+[ext_resource type="Script" path="res://Script/projectile.gd" id="1_up0u1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bay52"]
+size = Vector2(32, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3ku6"]
+size = Vector2(32, 7)
+
+[node name="Arrow" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_up0u1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_bay52")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3mv21")
+
+[node name="Hit Area" type="Area2D" parent="."]
+
+[node name="Arrow Hitbox" type="CollisionShape2D" parent="Hit Area"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_u3ku6")
+
+[connection signal="body_entered" from="Hit Area" to="." method="_on_hit_area_body_entered"]
