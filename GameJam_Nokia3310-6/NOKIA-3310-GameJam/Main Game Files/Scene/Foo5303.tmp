@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbspqxe5gcjfu"]
+
+[ext_resource type="Texture2D" uid="uid://ki2foc21gjse" path="res://_Template/icon.svg" id="1_bule1"]
+[ext_resource type="Script" path="res://Main Game Files/Food.gd" id="1_tfckw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2bfs"]
+size = Vector2(200, 200)
+
+[node name="Food" type="Area2D"]
+script = ExtResource("1_tfckw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_bule1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.03, 0.03)
+shape = SubResource("RectangleShape2D_t2bfs")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

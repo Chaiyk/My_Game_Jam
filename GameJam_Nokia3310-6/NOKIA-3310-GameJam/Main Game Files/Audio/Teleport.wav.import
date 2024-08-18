@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://da4et86upa6os"
+path="res://.godot/imported/Teleport.wav-55b655f87c2d07aabd25c30befbcea85.sample"
+
+[deps]
+
+source_file="res://Main Game Files/Audio/Teleport.wav"
+dest_files=["res://.godot/imported/Teleport.wav-55b655f87c2d07aabd25c30befbcea85.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

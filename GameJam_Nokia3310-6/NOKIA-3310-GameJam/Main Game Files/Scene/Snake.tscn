@@ -1,0 +1,164 @@
+[gd_scene load_steps=26 format=3 uid="uid://dbd8xbon2fyjc"]
+
+[ext_resource type="Script" path="res://Main Game Files/Script/Snake.gd" id="1_lmcos"]
+[ext_resource type="PackedScene" uid="uid://c33rh8dlkcc3b" path="res://Main Game Files/Scene/SnakeCell.tscn" id="2_dame7"]
+[ext_resource type="Texture2D" uid="uid://dq7kl8b272nsq" path="res://assets/snake-spritesheet.png" id="3_5dx78"]
+[ext_resource type="Texture2D" uid="uid://hlvbq5jedb2j" path="res://assets/img/Snake/Stun/Up/frame 1.png" id="4_1ec3a"]
+[ext_resource type="Texture2D" uid="uid://b5hq8ui0f3hk0" path="res://assets/img/Snake/Stun/Down/frame 1.png" id="4_ktovf"]
+[ext_resource type="Texture2D" uid="uid://dl6b4soeh4yar" path="res://assets/img/Snake/Stun/Down/frame 2.png" id="5_88d4x"]
+[ext_resource type="Texture2D" uid="uid://ckw45h12tbnov" path="res://assets/img/Snake/Stun/Up/frame 2.png" id="5_k62hi"]
+[ext_resource type="Texture2D" uid="uid://c2p77k5lfshmb" path="res://assets/img/Snake/Stun/Down/frame 3.png" id="6_gfffy"]
+[ext_resource type="Texture2D" uid="uid://bi80bhourg4dq" path="res://assets/img/Snake/Stun/Up/frame 3.png" id="6_sxmhh"]
+[ext_resource type="Texture2D" uid="uid://chdwmi3mguxbb" path="res://assets/img/Snake/Stun/Up/frame 4.png" id="7_gdmxi"]
+[ext_resource type="Texture2D" uid="uid://b2nd5aa087jqx" path="res://assets/img/Snake/Stun/Down/frame 4.png" id="7_iwfmx"]
+[ext_resource type="Texture2D" uid="uid://b464yaqrc7oxd" path="res://assets/img/Snake/Stun/Left/frame 1.png" id="8_5blau"]
+[ext_resource type="Texture2D" uid="uid://chawl082qlbnd" path="res://assets/img/Snake/Stun/Left/frame 2.png" id="9_4aoiw"]
+[ext_resource type="Texture2D" uid="uid://dy8eo3onkuolh" path="res://assets/img/Snake/Stun/Left/frame 3.png" id="10_e7y38"]
+[ext_resource type="Texture2D" uid="uid://dlapk7o7mk70o" path="res://assets/img/Snake/Stun/Left/frame 4.png" id="11_p2tew"]
+[ext_resource type="Texture2D" uid="uid://dh41socjnot33" path="res://assets/img/Snake/Stun/Right/frame 1.png" id="12_6ekac"]
+[ext_resource type="Texture2D" uid="uid://8d6ysr3mrdj6" path="res://assets/img/Snake/Stun/Right/frame 2.png" id="13_rncrn"]
+[ext_resource type="Texture2D" uid="uid://gmbj85vrpvj3" path="res://assets/img/Snake/Stun/Right/frame 3.png" id="14_a1k55"]
+[ext_resource type="Texture2D" uid="uid://8o4dqexof8u5" path="res://assets/img/Snake/Stun/Right/frame 4.png" id="15_j0xqj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpmnd"]
+atlas = ExtResource("3_5dx78")
+region = Rect2(18, 0, 6, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hc1eq"]
+atlas = ExtResource("3_5dx78")
+region = Rect2(6, 0, 6, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3p28"]
+atlas = ExtResource("3_5dx78")
+region = Rect2(0, 0, 6, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_872gr"]
+atlas = ExtResource("3_5dx78")
+region = Rect2(12, 0, 6, 6)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1jpvo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpmnd")
+}],
+"loop": false,
+"name": &"Down",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hc1eq")
+}],
+"loop": false,
+"name": &"Left",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3p28")
+}],
+"loop": false,
+"name": &"Right",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ktovf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_88d4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gfffy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_iwfmx")
+}],
+"loop": true,
+"name": &"Stun Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_5blau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4aoiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_e7y38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_p2tew")
+}],
+"loop": true,
+"name": &"Stun Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_6ekac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_rncrn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_a1k55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_j0xqj")
+}],
+"loop": true,
+"name": &"Stun Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_1ec3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_k62hi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sxmhh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gdmxi")
+}],
+"loop": true,
+"name": &"Stun Up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_872gr")
+}],
+"loop": false,
+"name": &"Up",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jhs0i"]
+size = Vector2(4, 4)
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_lmcos")
+snake_body = ExtResource("2_dame7")
+
+[node name="Head" parent="." instance=ExtResource("2_dame7")]
+sprite_frames = SubResource("SpriteFrames_1jpvo")
+animation = &"Right"
+is_head = true
+
+[node name="Camera2D" type="Camera2D" parent="Head"]
+limit_left = 0
+limit_right = 84
+
+[node name="Area2D2" type="Area2D" parent="Head"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Head/Area2D2"]
+visible = false
+shape = SubResource("RectangleShape2D_jhs0i")
+
+[connection signal="area_entered" from="Head/Area2D2" to="." method="_on_area_2d_2_area_entered"]

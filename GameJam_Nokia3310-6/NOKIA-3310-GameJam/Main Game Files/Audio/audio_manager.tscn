@@ -1,0 +1,34 @@
+[gd_scene load_steps=9 format=3 uid="uid://b4200wbr5tlg1"]
+
+[ext_resource type="Script" path="res://Main Game Files/Audio/audio_manager.gd" id="1_3jiol"]
+[ext_resource type="AudioStream" uid="uid://vsb1dfkrg5mu" path="res://Main Game Files/Audio/Move.wav" id="1_b6gtq"]
+[ext_resource type="AudioStream" uid="uid://da3icl1kyanfn" path="res://Main Game Files/Audio/Eat.wav" id="2_t5af5"]
+[ext_resource type="AudioStream" uid="uid://b6co3hgam850n" path="res://Main Game Files/Audio/StartGame.wav" id="3_nt68i"]
+[ext_resource type="AudioStream" uid="uid://mp6tom6q0c0t" path="res://Main Game Files/Audio/Death.wav" id="4_ums05"]
+[ext_resource type="AudioStream" uid="uid://cq37x3t06t1sd" path="res://Main Game Files/Audio/Unmovable.wav" id="5_s6wc0"]
+[ext_resource type="AudioStream" uid="uid://da4et86upa6os" path="res://Main Game Files/Audio/Teleport.wav" id="6_62um3"]
+[ext_resource type="AudioStream" uid="uid://ty0fij21kuaf" path="res://Main Game Files/Audio/Win.wav" id="7_juj6y"]
+
+[node name="Audio Manager" type="Node2D"]
+script = ExtResource("1_3jiol")
+
+[node name="Audio_Move" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_b6gtq")
+
+[node name="Audio_Eat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_t5af5")
+
+[node name="Audio_Start_Game" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_nt68i")
+
+[node name="Audio_Death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ums05")
+
+[node name="Audio_Unmovable" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_s6wc0")
+
+[node name="Audio_Teleport" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_62um3")
+
+[node name="Audio_Win" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_juj6y")

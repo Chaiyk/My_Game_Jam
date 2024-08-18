@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnowoag8uc0qj"]
+
+[ext_resource type="Script" path="res://Main Game Files/Script/Food.gd" id="1_i8j44"]
+[ext_resource type="Texture2D" uid="uid://dftmk46bcyo0r" path="res://assets/img/Snake/Snake-Food.png" id="2_fnbvc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t2bfs"]
+size = Vector2(133.333, 133.333)
+
+[node name="Food" type="Area2D"]
+script = ExtResource("1_i8j44")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_fnbvc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8.9407e-08, 1.19209e-07)
+scale = Vector2(0.03, 0.03)
+shape = SubResource("RectangleShape2D_t2bfs")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

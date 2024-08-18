@@ -1,0 +1,98 @@
+[gd_scene load_steps=13 format=3 uid="uid://dbd8xbon2fyjc"]
+
+[ext_resource type="Script" path="res://Main Game Files/Script/Snake.gd" id="1_lmcos"]
+[ext_resource type="PackedScene" uid="uid://c33rh8dlkcc3b" path="res://Main Game Files/Scene/SnakeCell.tscn" id="2_dame7"]
+[ext_resource type="Texture2D" uid="uid://dq7kl8b272nsq" path="res://assets/snake-spritesheet.png" id="3_5dx78"]
+[ext_resource type="Texture2D" uid="uid://diuid267stvwe" path="res://assets/img/Snake/Snake-Head-LR.png" id="3_13ejh"]
+[ext_resource type="Texture2D" uid="uid://dogwhln6sgvxr" path="res://assets/img/Snake/Snake-Head-UD.png" id="4_ikorj"]
+[ext_resource type="PackedScene" uid="uid://b4200wbr5tlg1" path="res://Main Game Files/Audio/audio_manager.tscn" id="6_f17cv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpmnd"]
+atlas = ExtResource("3_5dx78")
+region = Rect2(18, 0, 6, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hc1eq"]
+atlas = ExtResource("3_5dx78")
+region = Rect2(6, 0, 6, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3p28"]
+atlas = ExtResource("3_5dx78")
+region = Rect2(0, 0, 6, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_872gr"]
+atlas = ExtResource("3_5dx78")
+region = Rect2(12, 0, 6, 6)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1jpvo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpmnd")
+}],
+"loop": false,
+"name": &"Down",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hc1eq")
+}],
+"loop": false,
+"name": &"Left",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_13ejh")
+}],
+"loop": false,
+"name": &"LeftRight",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3p28")
+}],
+"loop": false,
+"name": &"Right",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_872gr")
+}],
+"loop": false,
+"name": &"Up",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ikorj")
+}],
+"loop": false,
+"name": &"UpDown",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jhs0i"]
+size = Vector2(4, 4)
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_lmcos")
+snake_body = ExtResource("2_dame7")
+
+[node name="Head" parent="." instance=ExtResource("2_dame7")]
+sprite_frames = SubResource("SpriteFrames_1jpvo")
+
+[node name="Camera2D" type="Camera2D" parent="Head"]
+limit_left = 0
+limit_right = 84
+
+[node name="Audio Manager" parent="Head" instance=ExtResource("6_f17cv")]
+
+[node name="Area2D2" type="Area2D" parent="Head"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Head/Area2D2"]
+shape = SubResource("RectangleShape2D_jhs0i")
+
+[connection signal="area_entered" from="Head/Area2D2" to="." method="_on_area_2d_2_area_entered"]

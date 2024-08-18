@@ -1,0 +1,142 @@
+[gd_scene load_steps=20 format=3 uid="uid://d4cu7rf6a6rd3"]
+
+[ext_resource type="Script" path="res://Main Game Files/Script/Star.gd" id="1_3pxbh"]
+[ext_resource type="Texture2D" uid="uid://ca6uv3g8d67b0" path="res://assets/img/star/Star.png" id="1_66vuk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3b1ne"]
+atlas = ExtResource("1_66vuk")
+region = Rect2(0, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_motro"]
+atlas = ExtResource("1_66vuk")
+region = Rect2(12, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptcg0"]
+atlas = ExtResource("1_66vuk")
+region = Rect2(24, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rosr"]
+atlas = ExtResource("1_66vuk")
+region = Rect2(36, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slfmi"]
+atlas = ExtResource("1_66vuk")
+region = Rect2(48, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsinl"]
+atlas = ExtResource("1_66vuk")
+region = Rect2(60, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cunpt"]
+atlas = ExtResource("1_66vuk")
+region = Rect2(72, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2v3u"]
+atlas = ExtResource("1_66vuk")
+region = Rect2(84, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppeka"]
+atlas = ExtResource("1_66vuk")
+region = Rect2(96, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iulo0"]
+atlas = ExtResource("1_66vuk")
+region = Rect2(0, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24hsi"]
+atlas = ExtResource("1_66vuk")
+region = Rect2(12, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7e2cs"]
+atlas = ExtResource("1_66vuk")
+region = Rect2(24, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6n64"]
+atlas = ExtResource("1_66vuk")
+region = Rect2(24, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2xpx"]
+atlas = ExtResource("1_66vuk")
+region = Rect2(12, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkh25"]
+atlas = ExtResource("1_66vuk")
+region = Rect2(0, 0, 12, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ykn2w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3b1ne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_motro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptcg0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rosr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slfmi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsinl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cunpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2v3u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppeka")
+}],
+"loop": false,
+"name": &"FlyUp",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iulo0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24hsi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7e2cs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6n64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2xpx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkh25")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikh47"]
+size = Vector2(12, 12)
+
+[node name="Star" type="Node2D"]
+script = ExtResource("1_3pxbh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_ykn2w")
+animation = &"Idle"
+frame_progress = 0.17647
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+shape = SubResource("RectangleShape2D_ikh47")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="AnimatedSprite2D/Area2D" to="." method="_on_area_2d_area_entered"]

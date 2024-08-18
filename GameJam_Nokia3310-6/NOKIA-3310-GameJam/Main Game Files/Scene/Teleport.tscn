@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://d04uad02wdmri"]
+
+[ext_resource type="Script" path="res://Main Game Files/Script/Teleport.gd" id="1_elryw"]
+[ext_resource type="Texture2D" uid="uid://byw5d803pqxoj" path="res://assets/test-tileset.png" id="2_4nxgl"]
+
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v73rs"]
+atlas = ExtResource("2_4nxgl")
+region = Rect2(24, 24, 6, 6)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ureo7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v73rs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_16yxp"]
+size = Vector2(6, 6)
+
+[node name="Teleport" type="Node2D"]
+script = ExtResource("1_elryw")
+
+[node name="AnimatedSprited2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_ureo7")
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprited2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprited2D/Area2D"]
+shape = SubResource("RectangleShape2D_16yxp")
+
+[connection signal="area_entered" from="AnimatedSprited2D/Area2D" to="." method="_on_area_2d_area_entered"]

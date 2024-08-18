@@ -1,0 +1,91 @@
+[gd_scene load_steps=11 format=3 uid="uid://c33rh8dlkcc3b"]
+
+[ext_resource type="Texture2D" uid="uid://klelb37jh70v" path="res://assets/img/Snake/Snake-BodyC-LR.png" id="1_guura"]
+[ext_resource type="Texture2D" uid="uid://dq7kl8b272nsq" path="res://assets/snake-spritesheet.png" id="1_xqkqw"]
+[ext_resource type="Texture2D" uid="uid://65rwtihgvd07" path="res://assets/img/Snake/Snake-BodyC-UD.png" id="2_xlona"]
+[ext_resource type="Script" path="res://Main Game Files/Script/SnakeCell.gd" id="4_t64ji"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4redd"]
+atlas = ExtResource("1_xqkqw")
+region = Rect2(18, 6, 6, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itxn0"]
+atlas = ExtResource("1_xqkqw")
+region = Rect2(6, 6, 6, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12i2o"]
+atlas = ExtResource("1_xqkqw")
+region = Rect2(0, 6, 6, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h37p6"]
+atlas = ExtResource("1_xqkqw")
+region = Rect2(12, 6, 6, 6)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6jdvy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4redd")
+}],
+"loop": false,
+"name": &"Down",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itxn0")
+}],
+"loop": false,
+"name": &"Left",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_guura")
+}],
+"loop": false,
+"name": &"LeftRight",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12i2o")
+}],
+"loop": false,
+"name": &"Right",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h37p6")
+}],
+"loop": false,
+"name": &"Up",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xlona")
+}],
+"loop": false,
+"name": &"UpDown",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_huayp"]
+size = Vector2(2, 4)
+
+[node name="Body" type="AnimatedSprite2D"]
+position = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_6jdvy")
+animation = &"UpDown"
+script = ExtResource("4_t64ji")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_huayp")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
