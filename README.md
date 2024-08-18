@@ -1,6 +1,6 @@
 Here all the games that me and my friend made when joining Game Jam. 
 
-##What is Game Jam?
+## What is Game Jam? <br>
 Game Jam is a small event where the participants try to create a game with a theme that was given by the event host.
 
 ## Game List <Br>
